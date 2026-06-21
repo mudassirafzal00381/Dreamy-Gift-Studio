@@ -1,0 +1,2040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dreamy Gift Studio | Customized Gifts in Pakistan</title>
+  <meta name="description" content="Dreamy gifts for special moments. Customized orders available from Muzaffargarh, Pakistan.">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary:   #3B6CFF;
+      --accent:    #8C5BFF;
+      --soft:      #E8F4FF;
+      --surface:   #FFFFFF;
+      --text:      #17204E;
+      --muted:     #6A7AAE;
+      --white:     #FFFFFF;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: linear-gradient(180deg, rgba(232,244,255,0.95) 0%, rgba(255,255,255,0.98) 60%, rgba(255,255,255,1) 100%),
+        radial-gradient(circle at 12% 12%, rgba(140,91,255,0.16) 0%, transparent 24%),
+        radial-gradient(circle at 88% 18%, rgba(59,108,255,0.1) 0%, transparent 22%);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 5vw;
+      background: rgba(232,244,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(59,108,255,0.18);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 14px;
+    }
+    .nav-logo img {
+      height: 48px; width: auto;
+      display: block;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none; font-size: 0.85rem;
+      color: var(--text); letter-spacing: 0.06em;
+      text-transform: uppercase; font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--primary); }
+    .nav-cta {
+      background: var(--primary); color: var(--white);
+      padding: 10px 22px; border-radius: 50px;
+      text-decoration: none; font-size: 0.82rem;
+      font-weight: 500; letter-spacing: 0.05em;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { background: #2b54d0; transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--text); border-radius: 2px; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: grid; place-items: center;
+      text-align: center;
+      padding: 120px 5vw 80px;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(140,91,255,0.18) 0%, transparent 20%),
+        radial-gradient(circle at 84% 16%, rgba(59,108,255,0.14) 0%, transparent 18%),
+        linear-gradient(180deg, rgba(255,255,255,0.96), rgba(232,244,255,0.88));
+      position: relative; overflow: hidden;
+      border: 1px solid rgba(59,108,255,0.16);
+      border-radius: 32px;
+      box-shadow: 0 32px 80px rgba(59,108,255,0.08);
+    }
+    .hero-ribbon {
+      position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--primary); font-weight: 500;
+      border: 1px solid rgba(59,108,255,0.25); border-radius: 50px;
+      padding: 8px 20px; margin-bottom: 28px;
+      background: rgba(59,108,255,0.04);
+    }
+    #hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 300; line-height: 1.05;
+      color: var(--text); margin-bottom: 24px;
+    }
+    #hero h1 em { color: var(--primary); font-style: italic; }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--muted); max-width: 520px; margin: 0 auto 24px;
+      line-height: 1.7; font-weight: 300;
+    }
+    .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--accent)); color: var(--white);
+      padding: 14px 34px; border-radius: 50px;
+      text-decoration: none; font-size: 0.9rem; font-weight: 500;
+      transition: background 0.2s, transform 0.2s; letter-spacing: 0.03em;
+      box-shadow: 0 18px 40px rgba(59,108,255,0.15);
+    }
+    .btn-primary:hover { background: linear-gradient(135deg, #2b54d0, #7b4de0); transform: translateY(-2px); }
+    .btn-outline {
+      border: 1.5px solid var(--primary); color: var(--primary);
+      padding: 14px 34px; border-radius: 50px;
+      text-decoration: none; font-size: 0.9rem; font-weight: 500;
+      transition: all 0.2s; letter-spacing: 0.03em;
+    }
+    .btn-outline:hover { background: var(--primary); color: var(--white); transform: translateY(-2px); }
+    .hero-stats {
+      display: flex; gap: 40px; justify-content: center;
+      margin-top: 40px; flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem; font-weight: 600; color: var(--primary);
+    }
+    .stat-label { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+
+    /* floating petals */
+    .petal {
+      position: absolute; opacity: 0.18; pointer-events: none;
+      animation: float 8s ease-in-out infinite;
+    }
+    .hero-glow {
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 20%, rgba(140,91,255,0.12), transparent 32%),
+        radial-gradient(circle at 15% 75%, rgba(59,108,255,0.08), transparent 24%),
+        radial-gradient(circle at 85% 70%, rgba(59,108,255,0.07), transparent 20%);
+      pointer-events: none;
+    }
+    .hero-highlight {
+      display: inline-flex; gap: 12px; flex-wrap: wrap;
+      justify-content: center; margin: 0 auto;
+      padding: 14px 20px; border-radius: 999px;
+      background: rgba(255,255,255,0.72);
+      backdrop-filter: blur(8px); border: 1px solid rgba(59,108,255,0.14);
+      color: var(--text); font-size: 0.92rem; font-weight: 500;
+      max-width: 660px;
+    }
+    .hero-highlight span {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--primary);
+      background: rgba(59,108,255,0.08);
+      padding: 10px 14px; border-radius: 999px;
+      border: 1px solid rgba(59,108,255,0.08);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50%       { transform: translateY(-20px) rotate(10deg); }
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 90px 5vw; }
+    .section-label {
+      font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent); font-weight: 500; margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 300;
+      line-height: 1.15; color: var(--text); margin-bottom: 16px;
+    }
+    .section-title em { color: var(--primary); font-style: italic; }
+    .section-desc {
+      color: var(--muted); font-size: 1rem; max-width: 520px;
+      line-height: 1.75; font-weight: 300; margin-bottom: 50px;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--white);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+    }
+    .about-img-wrap {
+      position: relative; border-radius: 20px; overflow: hidden;
+    }
+    .about-img-wrap img { width: 100%; display: block; border-radius: 20px; }
+    .about-badge {
+      position: absolute; bottom: 24px; left: 24px;
+      background: var(--primary); color: var(--white);
+      border-radius: 14px; padding: 14px 20px;
+      font-size: 0.85rem; font-weight: 500;
+    }
+    .about-badge strong { display: block; font-size: 1.4rem; font-weight: 600; }
+    .about-features { display: grid; gap: 18px; margin-top: 30px; }
+    .about-feat {
+      display: flex; gap: 14px; align-items: flex-start;
+    }
+    .feat-icon {
+      width: 42px; height: 42px; border-radius: 12px;
+      background: var(--accent); display: grid; place-items: center;
+      font-size: 1.2rem; flex-shrink: 0;
+    }
+    .feat-text h4 { font-size: 0.95rem; font-weight: 500; margin-bottom: 4px; }
+    .feat-text p { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+
+    /* ── PRODUCTS ── */
+    #products { background: var(--soft); }
+    .products-header { text-align: center; }
+    .products-header .section-desc { margin: 0 auto 50px; }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .product-card {
+      background: var(--surface); border-radius: 20px;
+      overflow: hidden; box-shadow: 0 2px 20px rgba(42,26,34,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product-card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(42,26,34,0.12); }
+    .product-img {
+      height: 260px; background: rgba(59,108,255,0.06);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 4rem; position: relative; overflow: hidden;
+    }
+    .product-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .product-card:hover .product-img img {
+      transform: scale(1.05);
+    }
+    .product-img .badge {
+      position: absolute; top: 14px; right: 14px;
+      background: var(--primary); color: var(--white);
+      font-size: 0.72rem; padding: 4px 10px; border-radius: 50px;
+      font-weight: 500; letter-spacing: 0.04em;
+    }
+    .product-body { padding: 22px; }
+    .product-body h3 { font-size: 1rem; font-weight: 500; margin-bottom: 8px; }
+    .product-body p { font-size: 0.85rem; color: var(--muted); line-height: 1.55; margin-bottom: 16px; }
+    .product-footer {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem; font-weight: 600; color: var(--primary);
+    }
+    .price span { font-size: 0.8rem; color: var(--muted); font-family: 'DM Sans', sans-serif; font-weight: 300; }
+    .order-btn {
+      background: var(--text); color: var(--white);
+      border: none; border-radius: 50px; padding: 9px 20px;
+      font-size: 0.8rem; cursor: pointer; font-weight: 500;
+      transition: background 0.2s; text-decoration: none;
+    }
+    .order-btn:hover { background: var(--primary); }
+
+    /* ── PROCESS ── */
+    #process {
+      /* white overlay above the background image ensures text/cards stay readable */
+      background: linear-gradient(rgba(248,251,255,0.55), rgba(248,251,255,0.55)),
+        url('src/Order in 4 steps.png') center/cover no-repeat;
+      background-blend-mode: normal;
+      color: var(--text);
+      text-align: center;
+      padding-top: 90px;
+      padding-bottom: 90px;
+      position: relative;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(7,43,91,0.06);
+    }
+    #process .section-title { color: #072B5B; }
+    #process .section-desc { color: rgba(7,43,91,0.78); margin: 0 auto 40px; }
+    .steps {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 24px; position: relative;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .step {
+      background: rgba(255,255,255,0.98);
+      border: 1px solid rgba(59,108,255,0.1);
+      border-radius: 20px; padding: 36px 24px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      color: var(--text);
+      box-shadow: 0 4px 20px rgba(7,43,91,0.06);
+      position: relative;
+      overflow: hidden;
+    }
+    .step::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .step:hover::before { opacity: 1; }
+    .step:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(59,108,255,0.14);
+    }
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem; color: var(--primary); opacity: 0.3;
+      font-weight: 600; margin-bottom: 8px;
+    }
+    .step-icon { font-size: 2rem; margin-bottom: 14px; }
+    .step h3 { font-size: 1rem; font-weight: 500; margin-bottom: 10px; color: var(--text); }
+    .step p { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── GALLERY ── */
+    #gallery { background: var(--surface); }
+    .gallery-header { text-align: center; }
+    .gallery-header .section-desc { margin: 0 auto 50px; }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 16px;
+    }
+    .g-item {
+      background: rgba(140,91,255,0.08);
+      border-radius: 16px; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3.5rem;
+      transition: transform 0.3s;
+    }
+    .g-item:hover { transform: scale(1.02); }
+    .g-item.tall { grid-row: span 2; min-height: 340px; }
+    .g-item.wide { grid-column: span 2; }
+    .g-item:not(.tall):not(.wide) { min-height: 160px; }
+    .g-item img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .gallery-cta { text-align: center; margin-top: 40px; }
+
+    /* ── TESTIMONIALS ── */
+    #testimonials {
+      background: linear-gradient(rgba(248,251,255,0.55), rgba(248,251,255,0.55)),
+        url('src/Order in 4 steps.png') center/cover no-repeat;
+      background-blend-mode: normal;
+      color: var(--text); text-align: center;
+      padding-top: 90px;
+      padding-bottom: 90px;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(7,43,91,0.06);
+    }
+    #testimonials .section-title { color: #072B5B; }
+    .testimonials-slider-container {
+      position: relative;
+      max-width: 1100px;
+      margin: 50px auto 0;
+      padding: 0 50px;
+    }
+    .testimonials-slider {
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scrollbar-width: none; /* Firefox */
+      padding: 10px 0;
+    }
+    .testimonials-slider::-webkit-scrollbar {
+      display: none; /* Chrome, Safari, Opera */
+    }
+    .testimonial {
+      flex: 0 0 calc(33.333% - 16px);
+      min-width: 280px;
+      background: rgba(255,255,255,0.98);
+      border: 1px solid rgba(7,43,91,0.08);
+      border-radius: 20px; padding: 30px;
+      text-align: left;
+      box-shadow: 0 12px 28px rgba(7,43,91,0.08);
+      color: var(--text);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .testimonial:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(59,108,255,0.12);
+    }
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 1px solid rgba(59,108,255,0.15);
+      color: var(--primary);
+      font-size: 1.6rem;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 4px 16px rgba(7,43,91,0.08);
+      transition: all 0.2s;
+      z-index: 10;
+      user-select: none;
+      outline: none;
+    }
+    .slider-btn:hover {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+    .prev-btn { left: 0; }
+    .next-btn { right: 0; }
+
+    @media (max-width: 900px) {
+      .testimonial {
+        flex: 0 0 calc(50% - 12px);
+      }
+      .testimonials-slider-container {
+        padding: 0 40px;
+      }
+    }
+    @media (max-width: 640px) {
+      .testimonial {
+        flex: 0 0 100%;
+      }
+      .testimonials-slider-container {
+        padding: 0 35px;
+      }
+      .slider-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 1.3rem;
+      }
+    }
+
+    /* ── MODALS & CUSTOM FLOWS ── */
+    .modal-overlay {
+      position: fixed; inset: 0; background: rgba(23,32,78,0.4);
+      backdrop-filter: blur(8px); display: none; place-items: center;
+      z-index: 500; padding: 20px;
+    }
+    .modal-overlay.active { display: grid; }
+    .modal-card {
+      background: var(--surface); border-radius: 28px; width: 100%; max-width: 500px;
+      padding: 40px; box-shadow: 0 24px 64px rgba(7,43,91,0.18);
+      position: relative; animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid rgba(59,108,255,0.12);
+      max-height: 90vh; overflow-y: auto;
+    }
+    .modal-card.admin-dashboard-card { max-width: 900px; width: 95%; height: 85vh; display: flex; flex-direction: column; }
+    .modal-close {
+      position: absolute; top: 20px; right: 20px; border: none; background: transparent;
+      font-size: 1.8rem; cursor: pointer; color: var(--muted); transition: color 0.2s; z-index: 10;
+    }
+    .modal-close:hover { color: var(--primary); }
+    .modal-title {
+      font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 500;
+      margin-bottom: 8px; color: var(--text);
+    }
+    .modal-subtitle { font-size: 0.9rem; color: var(--muted); margin-bottom: 24px; }
+    
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to   { transform: translateY(0); opacity: 1; }
+    }
+    
+    /* Interactive Stars Selection */
+    .rating-stars-select { display: flex; gap: 8px; font-size: 1.8rem; margin: 8px 0; }
+    .rating-stars-select span { cursor: pointer; color: #ddd; transition: color 0.15s; }
+    .rating-stars-select span:hover,
+    .rating-stars-select span.hovered,
+    .rating-stars-select span.selected { color: var(--accent); }
+    
+    /* Status Badges */
+    .status-badge {
+      display: inline-block; padding: 4px 10px; border-radius: 50px; font-size: 0.72rem;
+      font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .status-pending { background: #FFF3CD; color: #856404; }
+    .status-confirmed { background: #CCE5FF; color: #004085; }
+    .status-delivered { background: #D4EDDA; color: #155724; }
+    .status-cancelled { background: #F8D7DA; color: #721C24; }
+    
+    /* Admin Panel styles */
+    .admin-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(0,0,0,0.08); padding-bottom: 18px; margin-bottom: 18px; }
+    .admin-logged-in-user { font-size: 0.75rem; color: var(--muted); }
+    .admin-tabs { display: flex; gap: 10px; border-bottom: 1.5px solid rgba(0,0,0,0.06); padding-bottom: 10px; margin-bottom: 20px; }
+    .admin-tab { background: transparent; border: none; font-size: 0.9rem; font-weight: 500; color: var(--muted); padding: 8px 16px; cursor: pointer; border-radius: 8px; transition: all 0.2s; }
+    .admin-tab.active { background: var(--soft); color: var(--primary); }
+    .admin-filters { display: flex; gap: 14px; margin-bottom: 20px; flex-wrap: wrap; }
+    .admin-filters input, .admin-filters select { padding: 10px 14px; border: 1.5px solid rgba(0,0,0,0.08); border-radius: 8px; font-size: 0.85rem; background: var(--surface); color: var(--text); }
+    .admin-filters input { flex-grow: 1; min-width: 200px; }
+    
+    .admin-list-container { flex-grow: 1; overflow-y: auto; display: grid; gap: 16px; padding-right: 6px; }
+    .admin-item-card { background: var(--soft); border-radius: 16px; padding: 20px; display: flex; justify-content: space-between; gap: 16px; align-items: start; border: 1px solid rgba(59,108,255,0.06); flex-wrap: wrap; }
+    .admin-item-details { display: grid; gap: 6px; text-align: left; }
+    .admin-item-actions { display: flex; gap: 8px; align-self: center; }
+    .admin-item-actions button { padding: 8px 14px; border-radius: 50px; font-size: 0.78rem; font-weight: 500; cursor: pointer; transition: all 0.2s; }
+    .btn-approve { background: #28a745; color: white; border: none; }
+    .btn-approve:hover { background: #218838; }
+    .btn-reject { background: #ffc107; color: #212529; border: none; }
+    .btn-reject:hover { background: #e0a800; }
+    .btn-delete { background: #dc3545; color: white; border: none; }
+    .btn-delete:hover { background: #c82333; }
+    
+    .review-photo-preview { width: 60px; height: 60px; border-radius: 8px; object-fit: cover; border: 1px solid rgba(0,0,0,0.1); margin-top: 8px; }
+    .testimonial-img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--primary); }
+
+    .stars { color: var(--accent); font-size: 1rem; margin-bottom: 14px; letter-spacing: 2px; }
+    .testimonial p { font-size: 0.9rem; line-height: 1.7; color: rgba(23,36,71,0.92); font-style: italic; margin-bottom: 20px; }
+    .reviewer { display: flex; align-items: center; gap: 12px; }
+    .avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(74,144,226,0.14);
+      display: grid; place-items: center; font-size: 1.1rem;
+      color: #072B5B;
+    }
+    .reviewer-info strong { display: block; font-size: 0.9rem; color: #072B5B; }
+    .reviewer-info span { font-size: 0.78rem; color: rgba(7,43,91,0.7); }
+
+    /* ── CONTACT ── */
+    #contact {
+      background: var(--soft);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;
+    }
+    .contact-info h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 300;
+      margin-bottom: 20px; line-height: 1.2;
+    }
+    .contact-info h2 em { color: var(--primary); font-style: italic; }
+    .contact-info p { color: var(--muted); line-height: 1.7; margin-bottom: 36px; }
+    .contact-methods { display: grid; gap: 16px; }
+    .contact-method {
+      display: flex; gap: 14px; align-items: center;
+      background: var(--white); border-radius: 14px; padding: 18px;
+      text-decoration: none; color: var(--text);
+      transition: box-shadow 0.2s, transform 0.2s;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+    .contact-method:hover { box-shadow: 0 6px 24px rgba(59,108,255,0.15); transform: translateY(-2px); }
+    .method-icon {
+      width: 46px; height: 46px; border-radius: 12px;
+      background: var(--accent); display: grid; place-items: center; font-size: 1.3rem;
+    }
+    .method-text strong { display: block; font-size: 0.92rem; font-weight: 500; }
+    .method-text span { font-size: 0.82rem; color: var(--muted); }
+
+    .contact-form {
+      background: var(--surface); border-radius: 24px;
+      padding: 40px; box-shadow: 0 4px 30px rgba(42,26,34,0.06);
+    }
+    .contact-form h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem; font-weight: 400; margin-bottom: 28px;
+    }
+    .form-group { margin-bottom: 18px; }
+    .form-group label {
+      display: block; font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%; border: 1.5px solid rgba(42,26,34,0.1);
+      border-radius: 10px; padding: 12px 16px;
+      font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+      background: var(--surface); color: var(--text);
+      outline: none; transition: border-color 0.2s;
+      appearance: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus { border-color: var(--primary); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit {
+      width: 100%; background: var(--primary); color: var(--white);
+      border: none; border-radius: 50px; padding: 15px;
+      font-size: 0.95rem; font-weight: 500; cursor: pointer;
+      transition: background 0.2s; letter-spacing: 0.03em;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .form-submit:hover { background: #2b54d0; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--text); color: rgba(255,255,255,0.85);
+      padding: 60px 5vw 30px;
+    }
+    .footer-top {
+      display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px; margin-bottom: 50px;
+    }
+    .footer-brand .nav-logo { font-size: 1.6rem; color: var(--accent); }
+    .footer-brand p { font-size: 0.85rem; line-height: 1.7; margin-top: 14px; }
+    .footer-col h4 {
+      font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--white); margin-bottom: 18px; font-weight: 500;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a {
+      color: rgba(255,255,255,0.6); text-decoration: none;
+      font-size: 0.87rem; transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--accent); }
+    .social-links { display: flex; gap: 12px; margin-top: 20px; }
+    .social-link {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1);
+      display: grid; place-items: center; text-decoration: none;
+      font-size: 1rem; transition: background 0.2s;
+    }
+    .social-link:hover { background: var(--primary); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 28px; display: flex;
+      justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p { font-size: 0.82rem; }
+    .footer-bottom a { color: var(--accent); text-decoration: none; }
+
+    /* ── WA FLOAT ── */
+    .wa-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 200;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: #25D366; color: var(--white);
+      display: grid; place-items: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+      text-decoration: none; font-size: 1.5rem;
+      transition: transform 0.2s; animation: pulse-wa 2.5s infinite;
+    }
+    .wa-float:hover { transform: scale(1.1); }
+    @keyframes pulse-wa {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+      50%       { box-shadow: 0 4px 40px rgba(37,211,102,0.7); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .steps { grid-template-columns: repeat(2, 1fr); }
+      .products-grid { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+    }
+    @media (max-width: 900px) {
+      #about { grid-template-columns: 1fr; }
+      #contact { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .g-item.wide { grid-column: span 1; }
+      .g-item.tall { grid-row: span 1; min-height: 220px; }
+      .steps { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+      .product-img { height: 220px; }
+      section { padding: 60px 4vw; }
+      #process { padding-top: 60px; padding-bottom: 60px; }
+    }
+    @media (max-width: 640px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .footer-top { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .g-item.tall { min-height: 200px; }
+      .g-item:not(.tall):not(.wide) { min-height: 140px; }
+      .hero-stats { gap: 24px; }
+      .steps { grid-template-columns: 1fr; gap: 16px; }
+      .step { padding: 28px 22px; }
+      .step-num { font-size: 2.2rem; }
+      .products-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .product-img { height: 180px; }
+      .product-body { padding: 16px; }
+      .product-body h3 { font-size: 0.9rem; }
+      .product-body p { font-size: 0.8rem; margin-bottom: 12px; }
+      .price { font-size: 1.1rem; }
+      .order-btn { padding: 7px 14px; font-size: 0.75rem; }
+      #process { border-radius: 8px; }
+      #testimonials { border-radius: 8px; }
+      .section-title { font-size: clamp(1.6rem, 5vw, 2.8rem); }
+      .section-desc { font-size: 0.9rem; margin-bottom: 30px; }
+    }
+    @media (max-width: 420px) {
+      .products-grid { grid-template-columns: 1fr; gap: 20px; }
+      .product-img { height: 240px; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .g-item.tall { grid-row: span 1; min-height: 260px; }
+      .g-item:not(.tall):not(.wide) { min-height: 200px; }
+      section { padding: 50px 5vw; }
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+  <!-- Supabase Client CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><img src="src/Logo.jpg" alt="Dreamy Gift Studio logo"></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Gifts</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="javascript:void(0)" onclick="openModal('track-modal')">Track Order</a></li>
+  </ul>
+  <a href="javascript:void(0)" onclick="openModal('track-modal')" class="nav-cta">Track Order</a>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-ribbon"></div>
+  <div class="hero-glow"></div>
+
+  <!-- petals -->
+  <svg class="petal" style="top:15%;left:8%;width:60px;animation-delay:-2s" viewBox="0 0 60 60"><ellipse cx="30" cy="30" rx="20" ry="12" fill="rgba(59,108,255,0.22)" transform="rotate(25 30 30)"/></svg>
+  <svg class="petal" style="top:25%;right:10%;width:45px;animation-delay:-5s" viewBox="0 0 60 60"><ellipse cx="30" cy="30" rx="18" ry="10" fill="rgba(140,91,255,0.22)" transform="rotate(-40 30 30)"/></svg>
+  <svg class="petal" style="bottom:20%;left:14%;width:35px;animation-delay:-3s" viewBox="0 0 60 60"><ellipse cx="30" cy="30" rx="15" ry="9" fill="rgba(59,108,255,0.18)" transform="rotate(60 30 30)"/></svg>
+
+  <div>
+    <div class="hero-tag">✨ Customized Orders Available</div>
+    <h1>Gifts That Feel<br><em>Truly Dreamy</em></h1>
+    <p class="hero-sub">Handcrafted with love from Muzaffargarh, Pakistan — because every special moment deserves a gift as beautiful as the memory.</p>
+    <div class="hero-highlight">
+      <span>Fast WhatsApp support</span>
+      <span>Fully handcrafted</span>
+      <span>Made in Muzaffargarh</span>
+    </div>
+    <div class="hero-btns">
+      <a href="https://wa.me/923336861680" target="_blank" class="btn-primary">💬 Order via WhatsApp</a>
+      <a href="#products" class="btn-outline">Explore Gifts</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">138+</div><div class="stat-label">Posts</div></div>
+      <div class="stat"><div class="stat-num">1,105</div><div class="stat-label">Followers</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Custom Made</div></div>
+      <div class="stat"><div class="stat-num">❤️</div><div class="stat-label">Made With Love</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-img-wrap fade-in">
+    <img src="src/2nd%20Dection%20Image.png" alt="Dreamy Gift Studio showcase">
+    <div class="about-badge">
+      <strong>Pakistan's</strong>
+      Dreamy Gift Brand
+    </div>
+  </div>
+  <div class="fade-in">
+    <div class="section-label">About Us</div>
+    <h2 class="section-title">Where <em>Every Gift</em><br>Tells a Story</h2>
+    <p class="section-desc">We believe a gift is more than an object — it's a feeling, a memory, a moment frozen in time. Dreamy Gift Studio crafts personalized gift hampers, flower bouquets, and custom surprises from the heart of Muzaffargarh, Pakistan.</p>
+    <div class="about-features">
+      <div class="about-feat">
+        <div class="feat-icon">🎁</div>
+        <div class="feat-text">
+          <h4>100% Customized</h4>
+          <p>Every order is tailor-made to your specifications — no two gifts are alike.</p>
+        </div>
+      </div>
+      <div class="about-feat">
+        <div class="feat-icon">🌹</div>
+        <div class="feat-text">
+          <h4>Premium Quality</h4>
+          <p>We source the finest chocolates, flowers, and accessories for every hamper.</p>
+        </div>
+      </div>
+      <div class="about-feat">
+        <div class="feat-icon">🚚</div>
+        <div class="feat-text">
+          <h4>Muzaffargarh City Delivery</h4>
+          <p>We deliver handcrafted gifts directly to doorsteps within Muzaffargarh City.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products">
+  <div class="products-header fade-in">
+    <div class="section-label">Our Gifts</div>
+    <h2 class="section-title">Explore Our <em>Collections</em></h2>
+    <p class="section-desc">From romantic hampers to birthday surprises — we create gifts for every occasion.</p>
+  </div>
+  <div class="products-grid">
+    <div class="product-card fade-in">
+      <div class="product-img"><img src="src/product-beauty-hamper.png" alt="Premium Beauty Gift Hamper"><span class="badge">Bestseller</span></div>
+      <div class="product-body">
+        <h3>Beauty Gift Hamper</h3>
+        <p>A curated hamper with beauty essentials — face masks, nail art, hair bows, earrings & more, beautifully wrapped.</p>
+        <div class="product-footer">
+          <div class="price">Custom <span>/ price varies</span></div>
+          <a href="javascript:void(0)" onclick="openCheckoutModal('Beauty Gift Hamper')" class="order-btn">Order</a>
+        </div>
+      </div>
+    </div>
+    <div class="product-card fade-in">
+      <div class="product-img"><img src="src/product-roses-bouquet.png" alt="Red Roses Graduation Bouquet"><span class="badge">Romantic</span></div>
+      <div class="product-body">
+        <h3>Flower Bouquets</h3>
+        <p>Stunning red rose bouquets with graduation caps, tiaras & ribbons — perfect for celebrations.</p>
+        <div class="product-footer">
+          <div class="price">Custom <span>/ price varies</span></div>
+          <a href="javascript:void(0)" onclick="openCheckoutModal('Flower Bouquets')" class="order-btn">Order</a>
+        </div>
+      </div>
+    </div>
+    <div class="product-card fade-in">
+      <div class="product-img"><img src="src/product-money-bouquet.png" alt="Money Bouquet"><span class="badge">Trending</span></div>
+      <div class="product-body">
+        <h3>Money Bouquets</h3>
+        <p>Stunning cash bouquets with real notes folded into roses — a luxurious & creative gift for any occasion.</p>
+        <div class="product-footer">
+          <div class="price">Custom <span>/ price varies</span></div>
+          <a href="javascript:void(0)" onclick="openCheckoutModal('Money Bouquets')" class="order-btn">Order</a>
+        </div>
+      </div>
+    </div>
+    <div class="product-card fade-in">
+      <div class="product-img"><img src="src/product-balloon-gift.png" alt="Balloon Gift Box"><span class="badge">Creative</span></div>
+      <div class="product-body">
+        <h3>Balloon Gift Boxes</h3>
+        <p>Hot air balloon style gift boxes filled with chocolates & snacks — a truly unique surprise.</p>
+        <div class="product-footer">
+          <div class="price">Custom <span>/ price varies</span></div>
+          <a href="javascript:void(0)" onclick="openCheckoutModal('Balloon Gift Boxes')" class="order-btn">Order</a>
+        </div>
+      </div>
+    </div>
+    <div class="product-card fade-in">
+      <div class="product-img"><img src="src/product-snack-basket.png" alt="Snack Gift Basket"><span class="badge">Luxury</span></div>
+      <div class="product-body">
+        <h3>Gift Baskets</h3>
+        <p>Beautifully decorated baskets with assorted chocolates, chips & snacks — tied with tulle ribbons.</p>
+        <div class="product-footer">
+          <div class="price">Custom <span>/ price varies</span></div>
+          <a href="javascript:void(0)" onclick="openCheckoutModal('Gift Baskets')" class="order-btn">Order</a>
+        </div>
+      </div>
+    </div>
+    <div class="product-card fade-in">
+      <div class="product-img"><img src="src/product-chocolate-white.png" alt="Premium Chocolate Bouquet"><span class="badge">Premium</span></div>
+      <div class="product-body">
+        <h3>Premium Chocolate Bouquet</h3>
+        <p>Elegant white & gold wrapped chocolate bouquets with Dairy Milk, Mars & KitKat — tied with pink bows.</p>
+        <div class="product-footer">
+          <div class="price">Custom <span>/ price varies</span></div>
+          <a href="javascript:void(0)" onclick="openCheckoutModal('Premium Chocolate Bouquet')" class="order-btn">Order</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-label" style="color:var(--accent)">How It Works</div>
+  <h2 class="section-title">Order in <em>4 Easy Steps</em></h2>
+  <p class="section-desc">Getting your dream gift is simple. Just reach out and we'll handle everything.</p>
+  <div class="steps">
+    <div class="step fade-in">
+      <div class="step-num">01</div>
+      <div class="step-icon">💬</div>
+      <h3>Contact Us</h3>
+      <p>Message us on WhatsApp or Instagram with your gift idea and occasion.</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-num">02</div>
+      <div class="step-icon">🎨</div>
+      <h3>Customize</h3>
+      <p>We discuss your preferences, budget, and personalize every detail just for you.</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-num">03</div>
+      <div class="step-icon">✨</div>
+      <h3>We Create</h3>
+      <p>Our team handcrafts your unique gift with care, quality, and love.</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-num">04</div>
+      <div class="step-icon">🎁</div>
+      <h3>Delivered!</h3>
+      <p>Your beautiful gift is ready for pickup or delivery — ready to make someone's day.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="gallery-header fade-in">
+    <div class="section-label">Gallery</div>
+    <h2 class="section-title">Our Recent <em>Creations</em></h2>
+    <p class="section-desc">A peek into the world of dreamy gifts — each one made with love.</p>
+  </div>
+  <div class="gallery-grid">
+    <div class="g-item tall"><img src="src/product-beauty-hamper.png" alt="Beauty Gift Hamper"></div>
+    <div class="g-item"><img src="src/product-roses-bouquet.png" alt="Flower Bouquet"></div>
+    <div class="g-item"><img src="src/product-money-bouquet.png" alt="Money Bouquet"></div>
+    <div class="g-item wide" style="min-height:160px"><img src="src/product-snack-display.png" alt="Snack Gift Display"></div>
+    <div class="g-item"><img src="src/product-balloon-gift.png" alt="Balloon Gift"></div>
+    <div class="g-item"><img src="src/product-snack-basket.png" alt="Gift Basket"></div>
+  </div>
+  <div class="gallery-cta fade-in">
+    <a href="https://www.instagram.com/dreamygift_studio/" target="_blank" class="btn-primary" style="display:inline-block;margin-top:40px">📷 View More on Instagram</a>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-label" style="color:rgba(255,255,255,0.6)">Reviews</div>
+  <h2 class="section-title">What Our <em>Customers Say</em></h2>
+  <a href="javascript:void(0)" onclick="openModal('review-modal')" class="btn-primary" style="display: inline-block; margin-top: 15px; text-decoration: none;">✨ Write a Review</a>
+  <div class="testimonials-slider-container fade-in">
+    <button class="slider-btn prev-btn">‹</button>
+    <div class="testimonials-slider">
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"The gift hamper was absolutely stunning! My wife was in tears of joy. Dreamy Gift Studio truly lives up to their name. Will order again!"</p>
+        <div class="reviewer">
+          <div class="avatar">👩</div>
+          <div class="reviewer-info">
+            <strong>Fatima A.</strong>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"Ordered a custom nikah frame and it came out so beautifully. The calligraphy was perfect. Everyone at the event loved it!"</p>
+        <div class="reviewer">
+          <div class="avatar">👨</div>
+          <div class="reviewer-info">
+            <strong>Ahmed K.</strong>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"The chocolate bouquet was amazing! Such a unique and thoughtful gift. Fast response on WhatsApp and delivered on time. Highly recommend!"</p>
+        <div class="reviewer">
+          <div class="avatar">👩</div>
+          <div class="reviewer-info">
+            <strong>Sara M.</strong>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"The best gift studio in Muzaffargarh! The money bouquet was wrapped so beautifully and the cash roses looked very real and neat."</p>
+        <div class="reviewer">
+          <div class="avatar">👩</div>
+          <div class="reviewer-info">
+            <strong>Ayesha R.</strong>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"Highly recommended! Delivery was right on time at Faisal Colony. The hot air balloon box was exactly like the photo on Instagram."</p>
+        <div class="reviewer">
+          <div class="avatar">👨</div>
+          <div class="reviewer-info">
+            <strong>Zain S.</strong>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"Amazing customized hamper. Very polite behavior and helpful staff. Best place to order surprise gifts in Muzaffargarh City."</p>
+        <div class="reviewer">
+          <div class="avatar">👩</div>
+          <div class="reviewer-info">
+            <strong>Hina B.</strong>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"They made a custom birthday basket for my sister at the last minute and delivered it perfectly. Thank you for the quick service!"</p>
+        <div class="reviewer">
+          <div class="avatar">👩</div>
+          <div class="reviewer-info">
+            <strong>Sana D.</strong>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">★★★★★</div>
+        <p>"Very high-quality flowers and the chocolates were fresh. It's so good to have such a premium customized gift service in Muzaffargarh!"</p>
+        <div class="reviewer">
+          <div class="avatar">👨</div>
+          <div class="reviewer-info">
+            <strong>Bilal W.</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="slider-btn next-btn">›</button>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-info fade-in">
+    <div class="section-label">Contact</div>
+    <h2>Let's Create<br>Something <em>Beautiful</em></h2>
+    <p>Ready to order? Have a custom idea in mind? We'd love to hear from you! Reach out through WhatsApp or Instagram and our team will get back to you quickly.</p>
+    <div class="contact-methods">
+      <a href="https://wa.me/923336861680" target="_blank" class="contact-method">
+        <div class="method-icon">💬</div>
+        <div class="method-text">
+          <strong>WhatsApp</strong>
+          <span>+92 333 6861680 — Quick Replies!</span>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/dreamygift_studio/" target="_blank" class="contact-method">
+        <div class="method-icon">📷</div>
+        <div class="method-text">
+          <strong>Instagram</strong>
+          <span>@dreamygift_studio</span>
+        </div>
+      </a>
+      <div class="contact-method" style="cursor:default">
+        <div class="method-icon">📍</div>
+        <div class="method-text">
+          <strong>Location</strong>
+          <span>Muzaffargarh, Punjab, Pakistan</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-form fade-in">
+    <h3>Send Us a Message 💌</h3>
+    <div class="form-group">
+      <label>Your Name</label>
+      <input type="text" placeholder="e.g. Sara Ahmed">
+    </div>
+    <div class="form-group">
+      <label>WhatsApp Number</label>
+      <input type="tel" placeholder="+92 300 0000000">
+    </div>
+    <div class="form-group">
+      <label>Gift Occasion</label>
+      <select>
+        <option>Select Occasion…</option>
+        <option>Birthday</option>
+        <option>Wedding / Nikah</option>
+        <option>Anniversary</option>
+        <option>Eid Gift</option>
+        <option>Valentine's Day</option>
+        <option>Mother's Day</option>
+        <option>Just Because 💕</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Tell Us Your Idea</label>
+      <textarea placeholder="Describe your dream gift — theme, colors, budget, anything!"></textarea>
+    </div>
+    <button class="form-submit" onclick="sendToWhatsApp()">💬 Send via WhatsApp</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="nav-logo">🎁 Dreamy Gift Studio</div>
+      <p>Dreamy gifts for special moments. Customized orders from the heart of Muzaffargarh, Pakistan. Made with love — always.</p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/dreamygift_studio/" target="_blank" class="social-link">📷</a>
+        <a href="https://wa.me/923336861680" target="_blank" class="social-link">💬</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Our Gifts</h4>
+      <ul>
+        <li><a href="#products">Beauty Gift Hampers</a></li>
+        <li><a href="#products">Flower Bouquets</a></li>
+        <li><a href="#products">Money Bouquets</a></li>
+        <li><a href="#products">Balloon Gift Boxes</a></li>
+        <li><a href="#products">Gift Baskets</a></li>
+        <li><a href="#products">Premium Bouquets</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Occasions</h4>
+      <ul>
+        <li><a href="#contact">Birthdays</a></li>
+        <li><a href="#contact">Weddings</a></li>
+        <li><a href="#contact">Anniversaries</a></li>
+        <li><a href="#contact">Eid Gifts</a></li>
+        <li><a href="#contact">Valentine's Day</a></li>
+        <li><a href="#contact">Mother's Day</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="https://wa.me/923336861680" target="_blank">WhatsApp Order</a></li>
+        <li><a href="https://www.instagram.com/dreamygift_studio/" target="_blank">Instagram</a></li>
+        <li><a href="#contact">Send Message</a></li>
+        <li><a href="javascript:void(0)" onclick="openModal('admin-modal')" style="opacity: 0.5;">🛡️ Admin Login</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Dreamy Gift Studio, Muzaffargarh, Pakistan. All rights reserved.</p>
+    <p>Made with 💕 for every special moment</p>
+  </div>
+</footer>
+
+<!-- ========================================================================= -->
+<!-- ── CLIENT & ADMIN MODALS ── -->
+<!-- ========================================================================= -->
+
+<!-- 1. Checkout / Order Modal -->
+<div id="checkout-modal" class="modal-overlay">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal('checkout-modal')">&times;</button>
+    <h3 class="modal-title">Complete Your Order</h3>
+    <p class="modal-subtitle">You are ordering: <strong id="checkout-product-name" style="color: var(--primary);">Product Name</strong></p>
+    <form id="checkout-form" onsubmit="handleCheckoutSubmit(event)">
+      <input type="hidden" id="checkout-product-val">
+      <div class="form-group">
+        <label style="display:block; font-size:0.8rem; font-weight:500; text-transform:uppercase; color:var(--muted); margin-bottom:8px;">Your Name</label>
+        <input type="text" id="order-name" required placeholder="e.g. Sara Ahmed" style="width:100%; border:1.5px solid rgba(42,26,34,0.1); border-radius:10px; padding:12px 16px; font-family:inherit; font-size:0.9rem; margin-bottom:18px;">
+      </div>
+      <div class="form-group">
+        <label style="display:block; font-size:0.8rem; font-weight:500; text-transform:uppercase; color:var(--muted); margin-bottom:8px;">WhatsApp Number</label>
+        <input type="tel" id="order-phone" required placeholder="e.g. +92 300 1234567" style="width:100%; border:1.5px solid rgba(42,26,34,0.1); border-radius:10px; padding:12px 16px; font-family:inherit; font-size:0.9rem; margin-bottom:18px;">
+      </div>
+      <div class="form-group">
+        <label style="display:block; font-size:0.8rem; font-weight:500; text-transform:uppercase; color:var(--muted); margin-bottom:8px;">Delivery Address (Muzaffargarh City Only)</label>
+        <textarea id="order-address" required placeholder="Street address, colony, or sector in Muzaffargarh City..." style="width:100%; border:1.5px solid rgba(42,26,34,0.1); border-radius:10px; padding:12px 16px; font-family:inherit; font-size:0.9rem; resize:vertical; min-height:80px; margin-bottom:18px;"></textarea>
+      </div>
+      <div class="form-group">
+        <label style="display:block; font-size:0.8rem; font-weight:500; text-transform:uppercase; color:var(--muted); margin-bottom:8px;">Custom Instructions / Card Text (Optional)</label>
+        <textarea id="order-instructions" placeholder="Any specific names to add, chocolate preferences, colors, etc." style="width:100%; border:1.5px solid rgba(42,26,34,0.1); border-radius:10px; padding:12px 16px; font-family:inherit; font-size:0.9rem; resize:vertical; min-height:60px; margin-bottom:18px;"></textarea>
+      </div>
+      <button type="submit" class="form-submit" style="width: 100%; background: var(--primary); color: var(--white); border: none; border-radius: 50px; padding: 15px; font-size: 0.95rem; font-weight: 500; cursor: pointer; letter-spacing: 0.03em; font-family: inherit;">Confirm Order & Get Tracking ID</button>
+    </form>
+    
+    <div id="checkout-success" style="display:none; text-align:center; padding: 10px 0;">
+      <div style="font-size: 3.5rem; margin-bottom: 16px;">🎉</div>
+      <h3 style="font-family:'Cormorant Garamond', serif; font-size:1.8rem; margin-bottom:8px; color:var(--text);">Order Logged Successfully!</h3>
+      <p style="color: var(--muted); font-size:0.9rem; margin-bottom:20px;">Your Order Tracking ID is:</p>
+      <div style="background: var(--soft); padding: 12px 24px; border-radius: 12px; display: inline-block; font-size: 1.4rem; font-weight: 600; color: var(--primary); margin-bottom: 24px; border: 1.5px dashed var(--primary); text-transform: uppercase;" id="success-tracking-id">DGS-XXXX</div>
+      <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.5; margin-bottom: 24px;">Please click the button below to send your details directly to our WhatsApp chat. We will verify and confirm your order shortly!</p>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <a id="whatsapp-confirm-btn" href="#" target="_blank" class="btn-primary" style="text-decoration:none; display:block; padding:14px; text-align:center; border-radius:50px; font-size:0.9rem; font-weight:500;">💬 Send to WhatsApp Chat</a>
+        <button onclick="closeModal('checkout-modal')" class="btn-outline" style="background:transparent; border:1.5px solid var(--primary); color:var(--primary); padding:12px; border-radius:50px; font-size:0.9rem; font-weight:500; cursor:pointer;">Close Window</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. Track Order Modal -->
+<div id="track-modal" class="modal-overlay">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal('track-modal')">&times;</button>
+    <h3 class="modal-title">Track Your Order</h3>
+    <p class="modal-subtitle">Enter your tracking code below to check status</p>
+    <form id="track-form" onsubmit="handleTrackSubmit(event)">
+      <div class="form-group">
+        <label style="display:block; font-size:0.8rem; font-weight:500; text-transform:uppercase; color:var(--muted); margin-bottom:8px;">Order Tracking ID</label>
+        <input type="text" id="track-id" required placeholder="e.g. DGS-MZG-1024" style="width:100%; border:1.5px solid rgba(42,26,34,0.1); border-radius:10px; padding:12px 16px; font-family:inherit; font-size:0.9rem; text-transform: uppercase; margin-bottom:18px;">
+      </div>
+      <button type="submit" class="form-submit" style="width: 100%; background: var(--primary); color: var(--white); border: none; border-radius: 50px; padding: 15px; font-size: 0.95rem; font-weight: 500; cursor: pointer; letter-spacing: 0.03em; font-family: inherit;">Track Live Status</button>
+    </form>
+    
+    <div id="track-result" style="display:none; margin-top:24px; border-top:1.5px solid rgba(0,0,0,0.06); padding-top:20px; text-align:left;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:18px;">
+        <span style="font-size: 1.1rem; font-weight: 600; color: var(--text);" id="track-result-id">DGS-XXXX</span>
+        <span id="track-result-status" class="status-badge status-pending">Pending</span>
+      </div>
+      <div style="display:grid; gap:10px; font-size: 0.9rem; color: var(--text);">
+        <p style="display:flex; justify-content:space-between; border-bottom: 1px solid rgba(0,0,0,0.04); padding-bottom:8px;"><span>Customer:</span> <strong id="track-result-name">-</strong></p>
+        <p style="display:flex; justify-content:space-between; border-bottom: 1px solid rgba(0,0,0,0.04); padding-bottom:8px;"><span>Product:</span> <strong id="track-result-items">-</strong></p>
+        <p style="display:flex; justify-content:space-between; border-bottom: 1px solid rgba(0,0,0,0.04); padding-bottom:8px;"><span>Total Cost:</span> <strong id="track-result-total">-</strong></p>
+        <p style="display:flex; justify-content:space-between; padding-bottom:8px;"><span>Order Date:</span> <strong id="track-result-date">-</strong></p>
+      </div>
+    </div>
+    <div id="track-error" style="display:none; color:#dc3545; margin-top:20px; text-align:center; font-size:0.9rem; font-weight:500;">
+      ❌ No order found with this tracking ID. Please verify your code.
+    </div>
+  </div>
+</div>
+
+<!-- 3. Review Submission Modal -->
+<div id="review-modal" class="modal-overlay">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal('review-modal')">&times;</button>
+    <h3 class="modal-title">Write a Review</h3>
+    <p class="modal-subtitle">Share your experience with Dreamy Gift Studio</p>
+    <form id="review-form" onsubmit="handleReviewSubmit(event)">
+      <div class="form-group">
+        <label style="display:block; font-size:0.8rem; font-weight:500; text-transform:uppercase; color:var(--muted); margin-bottom:8px;">Your Name</label>
+        <input type="text" id="review-author" required placeholder="e.g. Fatima A." style="width:100%; border:1.5px solid rgba(42,26,34,0.1); border-radius:10px; padding:12px 16px; font-family:inherit; font-size:0.9rem; margin-bottom:18px;">
+      </div>
+      <div class="form-group" style="margin-bottom:18px;">
+        <label style="display:block; font-size:0.8rem; font-weight:500; text-transform:uppercase; color:var(--muted); margin-bottom:4px;">Rating (1 - 5 Stars)</label>
+        <div class="rating-stars-select" id="stars-select-container">
+          <span data-star="1" onclick="setRating(1)">★</span>
+          <span data-star="2" onclick="setRating(2)">★</span>
+          <span data-star="3" onclick="setRating(3)">★</span>
+          <span data-star="4" onclick="setRating(4)">★</span>
+          <span data-star="5" class="selected" onclick="setRating(5)">★</span>
+        </div>
+        <input type="hidden" id="review-rating-val" value="5">
+      </div>
+      <div class="form-group">
+        <label style="display:block; font-size:0.8rem; font-weight:500; text-transform:uppercase; color:var(--muted); margin-bottom:8px;">Your Message</label>
+        <textarea id="review-text" required placeholder="How did you like our service, packaging, flowers or hampers?" style="width:100%; border:1.5px solid rgba(42,26,34,0.1); border-radius:10px; padding:12px 16px; font-family:inherit; font-size:0.9rem; resize:vertical; min-height:85px; margin-bottom:18px;"></textarea>
+      </div>
+      <div class="form-group">
+        <label style="display:block; font-size:0.8rem; font-weight:500; text-transform:uppercase; color:var(--muted); margin-bottom:8px;">Attach a Photo (Optional)</label>
+        <input type="file" id="review-photo" accept="image/*" style="width:100%; border:1.5px solid rgba(42,26,34,0.1); border-radius:10px; padding:10px; font-family:inherit; font-size:0.85rem; margin-bottom:24px;">
+      </div>
+      <button type="submit" id="review-submit-btn" class="form-submit" style="width: 100%; background: var(--primary); color: var(--white); border: none; border-radius: 50px; padding: 15px; font-size: 0.95rem; font-weight: 500; cursor: pointer; letter-spacing: 0.03em; font-family: inherit;">Submit Review</button>
+    </form>
+    
+    <div id="review-success" style="display:none; text-align:center; padding:10px 0;">
+      <div style="font-size: 3.5rem; margin-bottom: 16px;">✨</div>
+      <h3 style="font-family:'Cormorant Garamond', serif; font-size:1.8rem; margin-bottom:8px; color:var(--text);">Thank You!</h3>
+      <p style="margin: 10px 0 24px; color: var(--muted); font-size:0.9rem; line-height: 1.5;">Your review has been successfully submitted for verification. It will appear on our homepage once approved by the administrator!</p>
+      <button onclick="closeModal('review-modal')" class="btn-primary" style="padding:12px 30px; border-radius:50px; border:none; cursor:pointer;">Close Window</button>
+    </div>
+  </div>
+</div>
+
+<!-- 4. Admin Dashboard Modal -->
+<div id="admin-modal" class="modal-overlay">
+  <div class="modal-card admin-dashboard-card">
+    <button class="modal-close" onclick="closeModal('admin-modal')">&times;</button>
+    
+    <!-- Admin Login Panel -->
+    <div id="admin-login-screen" style="max-width: 400px; margin: 30px auto 0;">
+      <h3 class="modal-title">Admin Login Dashboard</h3>
+      <p class="modal-subtitle">Verify admin credentials to access approvals</p>
+      <form id="admin-login-form" onsubmit="handleAdminLogin(event)">
+        <div class="form-group">
+          <label style="display:block; font-size:0.8rem; font-weight:500; text-transform:uppercase; color:var(--muted); margin-bottom:8px;">Email Address</label>
+          <input type="email" id="admin-email" required placeholder="admin@dreamygifts.com" style="width:100%; border:1.5px solid rgba(42,26,34,0.1); border-radius:10px; padding:12px 16px; font-family:inherit; font-size:0.9rem; margin-bottom:18px;">
+        </div>
+        <div class="form-group">
+          <label style="display:block; font-size:0.8rem; font-weight:500; text-transform:uppercase; color:var(--muted); margin-bottom:8px;">Password</label>
+          <input type="password" id="admin-password" required placeholder="••••••••" style="width:100%; border:1.5px solid rgba(42,26,34,0.1); border-radius:10px; padding:12px 16px; font-family:inherit; font-size:0.9rem; margin-bottom:24px;">
+        </div>
+        <button type="submit" class="form-submit" style="width: 100%; background: var(--primary); color: var(--white); border: none; border-radius: 50px; padding: 15px; font-size: 0.95rem; font-weight: 500; cursor: pointer; letter-spacing: 0.03em; font-family: inherit;">Access Dashboard</button>
+      </form>
+      <div id="admin-login-error" style="display:none; color:#dc3545; margin-top:16px; text-align:center; font-size:0.9rem; font-weight:500;">
+        ❌ Invalid administrator credentials. Please check your login details.
+      </div>
+    </div>
+    
+    <!-- Admin Controls Panel (Hidden by default) -->
+    <div id="admin-dashboard-screen" style="display:none; text-align:left;">
+      <div class="admin-header">
+        <div>
+          <h3 style="font-family:'Cormorant Garamond', serif; font-size:2rem; font-weight:500; color:var(--text); margin-bottom:4px;">Admin Portal</h3>
+          <p id="admin-logged-in-user" style="font-size:0.78rem; color:var(--muted);"></p>
+        </div>
+        <button onclick="handleAdminLogout()" class="btn-outline" style="border:1.5px solid var(--primary); background:transparent; color:var(--primary); padding:8px 18px; border-radius:50px; font-size:0.8rem; font-weight:500; cursor:pointer;">Sign Out</button>
+      </div>
+      
+      <!-- Tabs header -->
+      <div class="admin-tabs">
+        <button class="admin-tab active" id="reviews-tab-btn" onclick="switchAdminTab('reviews-tab')">Manage Reviews (<span id="count-reviews">-</span>)</button>
+        <button class="admin-tab" id="orders-tab-btn" onclick="switchAdminTab('orders-tab')">Manage Orders (<span id="count-orders">-</span>)</button>
+      </div>
+      
+      <!-- Tab 1: Reviews Management -->
+      <div id="admin-reviews-tab" class="admin-tab-content">
+        <div class="admin-filters">
+          <input type="text" id="admin-review-search" placeholder="Search customer reviews..." oninput="filterAdminReviews()">
+          <select id="admin-review-status-filter" onchange="filterAdminReviews()">
+            <option value="pending">Pending Approval ⏳</option>
+            <option value="approved">Approved Reviews ✅</option>
+            <option value="rejected">Rejected Reviews ❌</option>
+            <option value="all">All Reviews</option>
+          </select>
+        </div>
+        <div class="admin-list-container" id="admin-reviews-list">
+          <!-- Dynamically populated reviews list -->
+        </div>
+      </div>
+      
+      <!-- Tab 2: Orders Management -->
+      <div id="admin-orders-tab" class="admin-tab-content" style="display:none;">
+        <div class="admin-filters">
+          <input type="text" id="admin-order-search" placeholder="Search order ID or client name..." oninput="filterAdminOrders()">
+          <select id="admin-order-status-filter" onchange="filterAdminOrders()">
+            <option value="all">All Orders</option>
+            <option value="pending">Pending Orders ⏳</option>
+            <option value="confirmed">Confirmed Orders 📦</option>
+            <option value="delivered">Delivered Orders 🚚</option>
+            <option value="cancelled">Cancelled Orders ❌</option>
+          </select>
+        </div>
+        <div class="admin-list-container" id="admin-orders-list">
+          <!-- Dynamically populated orders list -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/923336861680" target="_blank" class="wa-float" title="Order on WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" style="width: 30px; height: 30px; display: block;"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></a>
+
+<script>
+  // =========================================================================
+  // ── DATABASE & SUPABASE CONFIGURATION ──
+  // =========================================================================
+  
+  // REPLACE these placeholders with your actual Supabase credentials.
+  // Once set, the app will automatically transition from local fallback mode to your live database.
+  const SUPABASE_URL = "https://your-supabase-project-id.supabase.co";
+  const SUPABASE_ANON_KEY = "your-anon-key";
+
+  let supabase = null;
+  let useFallback = true;
+
+  // Try initializing Supabase
+  if (typeof supabasejs !== 'undefined' && SUPABASE_URL && !SUPABASE_URL.includes("your-supabase")) {
+    try {
+      supabase = supabasejs.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+      useFallback = false;
+      console.log("Supabase connected successfully.");
+    } catch (e) {
+      console.error("Failed to connect to Supabase. Falling back to local storage.", e);
+    }
+  }
+
+  // Initialize Default Fallback Reviews if localStorage is empty
+  const defaultReviews = [
+    { id: 'rev-default-1', name: 'Fatima A.', rating: 5, text: "The gift hamper was absolutely stunning! My wife was in tears of joy. Dreamy Gift Studio truly lives up to their name. Will order again!", status: 'approved', created_at: new Date().toISOString() },
+    { id: 'rev-default-2', name: 'Ahmed K.', rating: 5, text: "Ordered a custom nikah frame and it came out so beautifully. The calligraphy was perfect. Everyone at the event loved it!", status: 'approved', created_at: new Date().toISOString() },
+    { id: 'rev-default-3', name: 'Sara M.', rating: 5, text: "The chocolate bouquet was amazing! Such a unique and thoughtful gift. Fast response on WhatsApp and delivered on time. Highly recommend!", status: 'approved', created_at: new Date().toISOString() }
+  ];
+
+  if (!localStorage.getItem('dg_reviews')) {
+    localStorage.setItem('dg_reviews', JSON.stringify(defaultReviews));
+  }
+  if (!localStorage.getItem('dg_orders')) {
+    localStorage.setItem('dg_orders', JSON.stringify([]));
+  }
+
+  // =========================================================================
+  // ── CORE WEB ANIMATIONS & NAV ──
+  // =========================================================================
+  
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // WhatsApp form send (generic contact form)
+  function sendToWhatsApp() {
+    const name = document.querySelectorAll('.form-group input')[0].value || 'Customer';
+    const phone = document.querySelectorAll('.form-group input')[1].value || '';
+    const occasion = document.querySelector('select').value;
+    const msg = document.querySelector('textarea').value || '';
+    const text = `Hi Dreamy Gift Studio! 🎁\n\nName: ${name}\nPhone: ${phone}\nOccasion: ${occasion}\n\nMessage: ${msg}`;
+    window.open('https://wa.me/923336861680?text=' + encodeURIComponent(text), '_blank');
+  }
+
+  // Hamburger (mobile nav)
+  function toggleMenu() {
+    const links = document.querySelector('.nav-links');
+    if (links) {
+      const isOpen = links.style.display === 'flex';
+      links.style.display = isOpen ? 'none' : 'flex';
+      links.style.flexDirection = 'column';
+      links.style.position = 'absolute';
+      links.style.top = '70px';
+      links.style.left = '0'; links.style.right = '0';
+      links.style.background = 'var(--soft)';
+      links.style.padding = '20px';
+      links.style.gap = '16px';
+      links.style.boxShadow = '0 8px 30px rgba(0,0,0,0.1)';
+    }
+  }
+
+  // =========================================================================
+  // ── MODAL MANAGEMENT ──
+  // =========================================================================
+  
+  function openModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) {
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      // Reset forms inside modal when opening
+      const form = modal.querySelector('form');
+      if (form) form.reset();
+      
+      const successBlock = modal.querySelector('[id$="-success"]');
+      if (successBlock) successBlock.style.display = 'none';
+      if (form) form.style.display = 'block';
+
+      const errorBlock = modal.querySelector('[id$="-error"]');
+      if (errorBlock) errorBlock.style.display = 'none';
+
+      const resultBlock = modal.querySelector('[id$="-result"]');
+      if (resultBlock) resultBlock.style.display = 'none';
+
+      // Reset rating selection to 5 stars for review modal
+      if (id === 'review-modal') {
+        setRating(5);
+      }
+    }
+  }
+
+  function closeModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+      // Clear hash if admin modal closes
+      if (id === 'admin-modal') {
+        window.location.hash = '';
+      }
+    }
+  }
+
+  // Rating Stars Interactive Handler
+  function setRating(rating) {
+    const container = document.getElementById('stars-select-container');
+    if (container) {
+      const stars = container.querySelectorAll('span');
+      stars.forEach(s => {
+        const starVal = parseInt(s.getAttribute('data-star'));
+        if (starVal <= rating) {
+          s.classList.add('selected');
+        } else {
+          s.classList.remove('selected');
+        }
+      });
+      document.getElementById('review-rating-val').value = rating;
+    }
+  }
+
+  // Star hover effects
+  const starsContainer = document.getElementById('stars-select-container');
+  if (starsContainer) {
+    const stars = starsContainer.querySelectorAll('span');
+    stars.forEach(s => {
+      s.addEventListener('mouseenter', () => {
+        const hoverVal = parseInt(s.getAttribute('data-star'));
+        stars.forEach(st => {
+          if (parseInt(st.getAttribute('data-star')) <= hoverVal) {
+            st.classList.add('hovered');
+          } else {
+            st.classList.remove('hovered');
+          }
+        });
+      });
+      s.addEventListener('mouseleave', () => {
+        stars.forEach(st => st.classList.remove('hovered'));
+      });
+    });
+  }
+
+  // =========================================================================
+  // ── CLIENT-SIDE ORDER FLOW ──
+  // =========================================================================
+  
+  function openCheckoutModal(productName) {
+    openModal('checkout-modal');
+    document.getElementById('checkout-product-name').innerText = productName;
+    document.getElementById('checkout-product-val').value = productName;
+  }
+
+  async function handleCheckoutSubmit(e) {
+    e.preventDefault();
+    const productName = document.getElementById('checkout-product-val').value;
+    const name = document.getElementById('order-name').value;
+    const phone = document.getElementById('order-phone').value;
+    const address = document.getElementById('order-address').value;
+    const instructions = document.getElementById('order-instructions').value;
+
+    // Generate custom short tracking ID
+    const randomCode = Math.floor(1000 + Math.random() * 9000);
+    const trackingId = `DGS-MZG-${randomCode}`;
+
+    const orderData = {
+      id: trackingId,
+      customer_name: name,
+      whatsapp_number: phone,
+      address: address,
+      items: [productName],
+      custom_instructions: instructions,
+      total_price: 0, // Custom / varies
+      status: 'pending'
+    };
+
+    let success = false;
+
+    if (useFallback) {
+      const localOrders = JSON.parse(localStorage.getItem('dg_orders') || '[]');
+      localOrders.push({ ...orderData, created_at: new Date().toISOString() });
+      localStorage.setItem('dg_orders', JSON.stringify(localOrders));
+      success = true;
+    } else {
+      const { error } = await supabase.from('orders').insert([orderData]);
+      if (!error) {
+        success = true;
+      } else {
+        console.error("Supabase Order Insert Error: ", error);
+        alert("Failed to submit order. Please try again.");
+      }
+    }
+
+    if (success) {
+      // Build WhatsApp payload text
+      const wsMessage = `Hi Dreamy Gift Studio! 🎁\n\nI just placed an order on your website!\n\n*Order Details*:\n- *Order ID:* ${trackingId}\n- *Product:* ${productName}\n- *Name:* ${name}\n- *WhatsApp:* ${phone}\n- *Address:* ${address}\n- *Instructions:* ${instructions || 'None'}\n\nPlease confirm my order. Thank you!`;
+      const wsUrl = `https://wa.me/923336861680?text=${encodeURIComponent(wsMessage)}`;
+
+      document.getElementById('checkout-form').style.display = 'none';
+      document.getElementById('checkout-success').style.display = 'block';
+      document.getElementById('success-tracking-id').innerText = trackingId;
+      document.getElementById('whatsapp-confirm-btn').href = wsUrl;
+    }
+  }
+
+  // =========================================================================
+  // ── ORDER TRACKING ──
+  // =========================================================================
+  
+  async function handleTrackSubmit(e) {
+    e.preventDefault();
+    const trackIdInput = document.getElementById('track-id').value.trim().toUpperCase();
+    const resultBlock = document.getElementById('track-result');
+    const errorBlock = document.getElementById('track-error');
+    
+    resultBlock.style.display = 'none';
+    errorBlock.style.display = 'none';
+
+    let order = null;
+
+    if (useFallback) {
+      const localOrders = JSON.parse(localStorage.getItem('dg_orders') || '[]');
+      order = localOrders.find(o => o.id.toUpperCase() === trackIdInput);
+    } else {
+      const { data, error } = await supabase.from('orders').select('*').eq('id', trackIdInput).single();
+      if (!error) order = data;
+    }
+
+    if (order) {
+      document.getElementById('track-result-id').innerText = order.id;
+      
+      const statusBadge = document.getElementById('track-result-status');
+      statusBadge.innerText = order.status;
+      statusBadge.className = `status-badge status-${order.status}`;
+      
+      document.getElementById('track-result-name').innerText = order.customer_name;
+      document.getElementById('track-result-items').innerText = order.items.join(', ');
+      document.getElementById('track-result-total').innerText = order.total_price > 0 ? `Rs. ${order.total_price}` : "Custom / Price Varies";
+      
+      const orderDate = new Date(order.created_at);
+      document.getElementById('track-result-date').innerText = orderDate.toLocaleDateString() + ' ' + orderDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+      
+      resultBlock.style.display = 'block';
+    } else {
+      errorBlock.style.display = 'block';
+    }
+  }
+
+  // =========================================================================
+  // ── CLIENT REVIEWS SUBMISSION ──
+  // =========================================================================
+  
+  async function handleReviewSubmit(e) {
+    e.preventDefault();
+    
+    const submitBtn = document.getElementById('review-submit-btn');
+    submitBtn.innerText = "Submitting...";
+    submitBtn.disabled = true;
+
+    const author = document.getElementById('review-author').value;
+    const rating = parseInt(document.getElementById('review-rating-val').value);
+    const reviewText = document.getElementById('review-text').value;
+    const fileInput = document.getElementById('review-photo');
+    const photoFile = fileInput.files[0];
+
+    let photoUrl = null;
+
+    if (photoFile) {
+      if (useFallback) {
+        // Read file as Base64 Data URL for local storage compatibility
+        photoUrl = await new Promise((resolve) => {
+          const reader = new FileReader();
+          reader.onloadend = () => resolve(reader.result);
+          reader.readAsDataURL(photoFile);
+        });
+      } else {
+        // Upload to Supabase Storage Bucket 'review-photos'
+        const fileExt = photoFile.name.split('.').pop();
+        const fileName = `${Date.now()}_review.${fileExt}`;
+        const { error: uploadError } = await supabase.storage
+          .from('review-photos')
+          .upload(fileName, photoFile);
+
+        if (!uploadError) {
+          const { data } = supabase.storage.from('review-photos').getPublicUrl(fileName);
+          photoUrl = data.publicUrl;
+        } else {
+          console.error("Photo upload failed: ", uploadError);
+        }
+      }
+    }
+
+    const reviewData = {
+      name: author,
+      rating: rating,
+      text: reviewText,
+      photo_url: photoUrl,
+      status: 'pending'
+    };
+
+    let success = false;
+
+    if (useFallback) {
+      const localReviews = JSON.parse(localStorage.getItem('dg_reviews') || '[]');
+      const newReview = {
+        id: `rev-${Date.now()}`,
+        created_at: new Date().toISOString(),
+        ...reviewData
+      };
+      localReviews.push(newReview);
+      localStorage.setItem('dg_reviews', JSON.stringify(localReviews));
+      success = true;
+    } else {
+      const { error } = await supabase.from('reviews').insert([reviewData]);
+      if (!error) success = true;
+    }
+
+    submitBtn.innerText = "Submit Review";
+    submitBtn.disabled = false;
+
+    if (success) {
+      document.getElementById('review-form').style.display = 'none';
+      document.getElementById('review-success').style.display = 'block';
+    } else {
+      alert("Failed to submit review. Please try again.");
+    }
+  }
+
+  // =========================================================================
+  // ── TESTIMONIALS SLIDER LOADER ──
+  // =========================================================================
+  
+  let sliderInterval = null;
+
+  async function loadApprovedTestimonials() {
+    const sliderContainer = document.querySelector('.testimonials-slider');
+    if (!sliderContainer) return;
+
+    let reviews = [];
+
+    if (useFallback) {
+      const localReviews = JSON.parse(localStorage.getItem('dg_reviews') || '[]');
+      reviews = localReviews.filter(r => r.status === 'approved');
+    } else {
+      const { data, error } = await supabase.from('reviews').select('*').eq('status', 'approved').order('created_at', { ascending: false });
+      if (!error) reviews = data;
+    }
+
+    // Clear existing slider reviews
+    sliderContainer.innerHTML = '';
+
+    if (reviews.length === 0) {
+      // Show fallback review cards if none are approved in database yet
+      reviews = defaultReviews;
+    }
+
+    reviews.forEach(review => {
+      const starsHtml = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
+      
+      let avatarHtml = `<div class="avatar">${review.name.charAt(0)}</div>`;
+      if (review.photo_url) {
+        avatarHtml = `<img src="${review.photo_url}" class="testimonial-img" alt="${review.name}">`;
+      }
+
+      const card = document.createElement('div');
+      card.className = 'testimonial';
+      card.innerHTML = `
+        <div class="stars" style="color:var(--accent); font-size:1rem; margin-bottom:14px; letter-spacing:2px;">${starsHtml}</div>
+        <p style="font-size: 0.9rem; line-height: 1.7; color: rgba(23,36,71,0.92); font-style: italic; margin-bottom: 20px;">"${review.text}"</p>
+        <div class="reviewer" style="display:flex; align-items:center; gap:12px;">
+          ${avatarHtml}
+          <div class="reviewer-info">
+            <strong style="display:block; font-size:0.9rem; color:#072B5B;">${review.name}</strong>
+          </div>
+        </div>
+      `;
+      sliderContainer.appendChild(card);
+    });
+
+    initSlider();
+  }
+
+  function initSlider() {
+    const slider = document.querySelector('.testimonials-slider');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    if (sliderInterval) clearInterval(sliderInterval);
+    
+    if (slider && prevBtn && nextBtn) {
+      // Clear existing clone listeners
+      const newPrev = prevBtn.cloneNode(true);
+      const newNext = nextBtn.cloneNode(true);
+      prevBtn.parentNode.replaceChild(newPrev, prevBtn);
+      nextBtn.parentNode.replaceChild(newNext, nextBtn);
+
+      newPrev.addEventListener('click', () => {
+        slider.scrollBy({ left: -slider.clientWidth / 2, behavior: 'smooth' });
+      });
+      newNext.addEventListener('click', () => {
+        slider.scrollBy({ left: slider.clientWidth / 2, behavior: 'smooth' });
+      });
+
+      const startAutoplay = () => {
+        sliderInterval = setInterval(() => {
+          if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10) {
+            slider.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            slider.scrollBy({ left: 320, behavior: 'smooth' });
+          }
+        }, 4000);
+      };
+
+      startAutoplay();
+
+      slider.addEventListener('mouseenter', () => clearInterval(sliderInterval));
+      slider.addEventListener('mouseleave', startAutoplay);
+    }
+  }
+
+  // =========================================================================
+  // ── ADMIN MANAGEMENT PANEL ──
+  // =========================================================================
+
+  let adminSession = null;
+  let allReviews = [];
+  let allOrders = [];
+
+  function switchAdminTab(tabName) {
+    document.querySelectorAll('.admin-tab-content').forEach(el => el.style.display = 'none');
+    document.querySelectorAll('.admin-tab').forEach(el => el.classList.remove('active'));
+    
+    if (tabName === 'reviews-tab') {
+      document.getElementById('admin-reviews-tab').style.display = 'block';
+      document.getElementById('reviews-tab-btn').classList.add('active');
+    } else {
+      document.getElementById('admin-orders-tab').style.display = 'block';
+      document.getElementById('orders-tab-btn').classList.add('active');
+    }
+  }
+
+  async function handleAdminLogin(e) {
+    e.preventDefault();
+    const email = document.getElementById('admin-email').value.trim();
+    const password = document.getElementById('admin-password').value;
+    const errorBlock = document.getElementById('admin-login-error');
+
+    errorBlock.style.display = 'none';
+    let loggedIn = false;
+
+    if (useFallback) {
+      if (email === 'admin@dreamygifts.com' && password === 'admin') {
+        adminSession = { email: email };
+        loggedIn = true;
+      }
+    } else {
+      const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+      if (!error) {
+        adminSession = data.session.user;
+        loggedIn = true;
+      }
+    }
+
+    if (loggedIn) {
+      document.getElementById('admin-login-screen').style.display = 'none';
+      document.getElementById('admin-dashboard-screen').style.display = 'block';
+      document.getElementById('admin-logged-in-user').innerText = `Logged in as: ${adminSession.email}`;
+      await loadAdminData();
+    } else {
+      errorBlock.style.display = 'block';
+    }
+  }
+
+  async function loadAdminData() {
+    if (useFallback) {
+      allReviews = JSON.parse(localStorage.getItem('dg_reviews') || '[]');
+      allOrders = JSON.parse(localStorage.getItem('dg_orders') || '[]');
+    } else {
+      // Fetch reviews
+      const { data: revData, error: revErr } = await supabase.from('reviews').select('*').order('created_at', { ascending: false });
+      if (!revErr) allReviews = revData;
+      
+      // Fetch orders
+      const { data: ordData, error: ordErr } = await supabase.from('orders').select('*').order('created_at', { ascending: false });
+      if (!ordErr) allOrders = ordData;
+    }
+
+    // Set tab counts
+    const pendingReviewsCount = allReviews.filter(r => r.status === 'pending').length;
+    document.getElementById('count-reviews').innerText = pendingReviewsCount;
+    document.getElementById('count-orders').innerText = allOrders.filter(o => o.status === 'pending').length;
+
+    renderAdminReviews();
+    renderAdminOrders();
+  }
+
+  function renderAdminReviews() {
+    const container = document.getElementById('admin-reviews-list');
+    const searchVal = document.getElementById('admin-review-search').value.toLowerCase();
+    const statusVal = document.getElementById('admin-review-status-filter').value;
+
+    container.innerHTML = '';
+
+    const filtered = allReviews.filter(r => {
+      const matchesSearch = r.name.toLowerCase().includes(searchVal) || r.text.toLowerCase().includes(searchVal);
+      const matchesStatus = (statusVal === 'all') || (r.status === statusVal);
+      return matchesSearch && matchesStatus;
+    });
+
+    if (filtered.length === 0) {
+      container.innerHTML = `<p style="color:var(--muted); text-align:center; padding: 20px;">No reviews found.</p>`;
+      return;
+    }
+
+    filtered.forEach(rev => {
+      const card = document.createElement('div');
+      card.className = 'admin-item-card';
+
+      let photoPreview = '';
+      if (rev.photo_url) {
+        photoPreview = `<a href="${rev.photo_url}" target="_blank"><img src="${rev.photo_url}" class="review-photo-preview" alt="Customer review attachment"></a>`;
+      }
+
+      let actions = '';
+      if (rev.status === 'pending') {
+        actions = `
+          <button class="btn-approve" onclick="updateReviewStatus('${rev.id}', 'approved')">Approve</button>
+          <button class="btn-reject" onclick="updateReviewStatus('${rev.id}', 'rejected')">Reject</button>
+        `;
+      } else if (rev.status === 'approved') {
+        actions = `<button class="btn-reject" onclick="updateReviewStatus('${rev.id}', 'rejected')">Reject</button>`;
+      } else {
+        actions = `<button class="btn-approve" onclick="updateReviewStatus('${rev.id}', 'approved')">Approve</button>`;
+      }
+
+      actions += `<button class="btn-delete" onclick="deleteReview('${rev.id}')">Delete</button>`;
+
+      const stars = '★'.repeat(rev.rating) + '☆'.repeat(5 - rev.rating);
+      const dateStr = new Date(rev.created_at).toLocaleDateString();
+
+      card.innerHTML = `
+        <div class="admin-item-details">
+          <div>
+            <strong>${rev.name}</strong> <span style="font-size:0.8rem; color:var(--muted)">(${dateStr})</span>
+            <div style="color:var(--accent); margin:4px 0;">${stars}</div>
+          </div>
+          <p style="font-size:0.85rem; line-height:1.4;">"${rev.text}"</p>
+          ${photoPreview}
+          <div style="margin-top:6px;"><span class="status-badge status-${rev.status === 'approved' ? 'delivered' : (rev.status === 'pending' ? 'pending' : 'cancelled')}">${rev.status}</span></div>
+        </div>
+        <div class="admin-item-actions">${actions}</div>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  function renderAdminOrders() {
+    const container = document.getElementById('admin-orders-list');
+    const searchVal = document.getElementById('admin-order-search').value.toLowerCase();
+    const statusVal = document.getElementById('admin-order-status-filter').value;
+
+    container.innerHTML = '';
+
+    const filtered = allOrders.filter(o => {
+      const matchesSearch = o.id.toLowerCase().includes(searchVal) || o.customer_name.toLowerCase().includes(searchVal);
+      const matchesStatus = (statusVal === 'all') || (o.status === statusVal);
+      return matchesSearch && matchesStatus;
+    });
+
+    if (filtered.length === 0) {
+      container.innerHTML = `<p style="color:var(--muted); text-align:center; padding: 20px;">No orders found.</p>`;
+      return;
+    }
+
+    filtered.forEach(ord => {
+      const card = document.createElement('div');
+      card.className = 'admin-item-card';
+
+      const dateStr = new Date(ord.created_at).toLocaleDateString();
+
+      const options = ['pending', 'confirmed', 'delivered', 'cancelled'].map(s => {
+        return `<option value="${s}" ${ord.status === s ? 'selected' : ''}>${s.charAt(0).toUpperCase() + s.slice(1)}</option>`;
+      }).join('');
+
+      card.innerHTML = `
+        <div class="admin-item-details">
+          <div>
+            <strong style="color:var(--primary); font-size:1.05rem;">${ord.id}</strong> <span style="font-size:0.8rem; color:var(--muted)">(${dateStr})</span>
+          </div>
+          <div style="font-size:0.9rem; margin-top:6px;">
+            <p><strong>Customer:</strong> ${ord.customer_name} (${ord.whatsapp_number})</p>
+            <p><strong>Address:</strong> ${ord.address}</p>
+            <p><strong>Products:</strong> ${ord.items.join(', ')}</p>
+            <p><strong>Instructions:</strong> ${ord.custom_instructions || 'None'}</p>
+          </div>
+        </div>
+        <div style="align-self:center; display:grid; gap:8px;">
+          <label style="font-size:0.75rem; font-weight:600; text-transform:uppercase; color:var(--muted);">Update Status:</label>
+          <select onchange="updateOrderStatus('${ord.id}', this.value)" style="padding:6px 12px; border-radius:6px; border:1px solid rgba(0,0,0,0.1); background:white;">
+            ${options}
+          </select>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  }
+
+  async function updateReviewStatus(id, newStatus) {
+    let success = false;
+    if (useFallback) {
+      const localReviews = JSON.parse(localStorage.getItem('dg_reviews') || '[]');
+      const rev = localReviews.find(r => r.id === id);
+      if (rev) {
+        rev.status = newStatus;
+        localStorage.setItem('dg_reviews', JSON.stringify(localReviews));
+        success = true;
+      }
+    } else {
+      const { error } = await supabase.from('reviews').update({ status: newStatus }).eq('id', id);
+      if (!error) success = true;
+    }
+
+    if (success) {
+      await loadAdminData();
+      await loadApprovedTestimonials(); // Refresh public slider
+    }
+  }
+
+  async function deleteReview(id) {
+    if (!confirm("Are you sure you want to permanently delete this review?")) return;
+
+    let success = false;
+    if (useFallback) {
+      const localReviews = JSON.parse(localStorage.getItem('dg_reviews') || '[]');
+      const index = localReviews.findIndex(r => r.id === id);
+      if (index > -1) {
+        localReviews.splice(index, 1);
+        localStorage.setItem('dg_reviews', JSON.stringify(localReviews));
+        success = true;
+      }
+    } else {
+      const { error } = await supabase.from('reviews').delete().eq('id', id);
+      if (!error) success = true;
+    }
+
+    if (success) {
+      await loadAdminData();
+      await loadApprovedTestimonials(); // Refresh public slider
+    }
+  }
+
+  async function updateOrderStatus(id, newStatus) {
+    let success = false;
+    if (useFallback) {
+      const localOrders = JSON.parse(localStorage.getItem('dg_orders') || '[]');
+      const ord = localOrders.find(o => o.id === id);
+      if (ord) {
+        ord.status = newStatus;
+        localStorage.setItem('dg_orders', JSON.stringify(localOrders));
+        success = true;
+      }
+    } else {
+      const { error } = await supabase.from('orders').update({ status: newStatus }).eq('id', id);
+      if (!error) success = true;
+    }
+
+    if (success) {
+      await loadAdminData();
+    }
+  }
+
+  async function handleAdminLogout() {
+    if (!useFallback) {
+      await supabase.auth.signOut();
+    }
+    adminSession = null;
+    document.getElementById('admin-dashboard-screen').style.display = 'none';
+    document.getElementById('admin-login-screen').style.display = 'block';
+  }
+
+  function filterAdminReviews() {
+    renderAdminReviews();
+  }
+
+  function filterAdminOrders() {
+    renderAdminOrders();
+  }
+
+  // =========================================================================
+  // ── ON PAGE LOAD TRIGGERS ──
+  // =========================================================================
+  
+  window.addEventListener('DOMContentLoaded', async () => {
+    // Load approved reviews for testimonials homepage
+    await loadApprovedTestimonials();
+
+    // Direct hash check in case user links straight to #admin
+    if (window.location.hash === '#admin') {
+      openModal('admin-modal');
+    }
+  });
+
+  // Watch URL hash changes
+  window.addEventListener('hashchange', () => {
+    if (window.location.hash === '#admin') {
+      openModal('admin-modal');
+    }
+  });
+</script>
+</body>
+</html>
