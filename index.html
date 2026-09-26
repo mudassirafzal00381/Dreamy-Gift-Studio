@@ -432,7 +432,10 @@
       position: relative; flex: 1; min-width: 0; border-radius: var(--r-card); overflow: hidden; cursor: pointer;
       transition: flex-grow 0.9s var(--ease); background: var(--bg-2); border: 0; padding: 0;
     }
-    .acc-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease), filter 0.6s; filter: saturate(0.8); }
+    .acc-item::before { content: ''; position: absolute; inset: -24px; background: var(--lqip) center / cover no-repeat; filter: blur(16px); transform: scale(1.1); }
+    .acc-item img { position: relative; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease), filter 0.6s, opacity 0.7s ease; filter: saturate(0.8); }
+    .js .acc-item img { opacity: 0; }
+    .js .acc-item img.is-loaded { opacity: 1; }
     .acc-item.is-open { flex-grow: 4.2; }
     .acc-item.is-open img { filter: none; transform: scale(1.03); }
     .gallery-foot { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-top: 28px; flex-wrap: wrap; }
@@ -966,12 +969,12 @@
       </div>
     </div>
     <div class="accordion reveal" id="accordion">
-      <button type="button" class="acc-item is-open" aria-label="Snack bouquet with balloon box and baskets"><img src="src/opt/g-1-500.webp" srcset="src/opt/g-1-500.webp 500w, src/opt/g-1-900.webp 900w" sizes="(max-width: 900px) 76vw, 580px" width="1600" height="1200" decoding="async" alt="Snack bouquet with balloon box and baskets" loading="lazy"></button>
-      <button type="button" class="acc-item" aria-label="Chocolate bouquet in pink wrap"><img src="src/opt/g-2-500.webp" srcset="src/opt/g-2-500.webp 500w, src/opt/g-2-900.webp 720w" sizes="(max-width: 900px) 76vw, 580px" width="720" height="1280" decoding="async" alt="Chocolate bouquet in pink wrap" loading="lazy"></button>
-      <button type="button" class="acc-item" aria-label="Snack basket with red tulle"><img src="src/opt/g-3-500.webp" srcset="src/opt/g-3-500.webp 500w, src/opt/g-3-900.webp 900w" sizes="(max-width: 900px) 76vw, 580px" width="1200" height="1600" decoding="async" alt="Snack basket with red tulle" loading="lazy"></button>
-      <button type="button" class="acc-item" aria-label="Custom gift by Dreamy Gift Studio"><img src="src/opt/g-4-500.webp" srcset="src/opt/g-4-500.webp 500w, src/opt/g-4-900.webp 900w" sizes="(max-width: 900px) 76vw, 580px" width="1200" height="1600" decoding="async" alt="Custom gift by Dreamy Gift Studio" loading="lazy"></button>
-      <button type="button" class="acc-item" aria-label="Custom gift by Dreamy Gift Studio"><img src="src/opt/g-5-500.webp" srcset="src/opt/g-5-500.webp 500w, src/opt/g-5-900.webp 900w" sizes="(max-width: 900px) 76vw, 580px" width="1200" height="1600" decoding="async" alt="Custom gift by Dreamy Gift Studio" loading="lazy"></button>
-      <button type="button" class="acc-item" aria-label="Custom gift by Dreamy Gift Studio"><img src="src/opt/g-6-500.webp" srcset="src/opt/g-6-500.webp 500w, src/opt/g-6-900.webp 900w" sizes="(max-width: 900px) 76vw, 580px" width="1200" height="1600" decoding="async" alt="Custom gift by Dreamy Gift Studio" loading="lazy"></button>
+      <button type="button" class="acc-item is-open" aria-label="Snack bouquet with balloon box and baskets" style="--lqip:url(data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQAwCdASoQABQALrV2u12jqampiYC0S1AE6ZQANVsg0lMsedDVa4AA/tMfWjEHi1xtA4MCien2DT1VrecA/jUUBRlmJvFfZdA970cV/1gtbARrnF4nAAAA)"><img data-src="src/opt/g-1-s600.webp" data-srcset="src/opt/g-1-s420.webp 420w, src/opt/g-1-s600.webp 600w, src/opt/g-1-s800.webp 800w" sizes="(max-width: 900px) 76vw, 540px" width="800" height="1000" alt="Snack bouquet with balloon box and baskets" decoding="async"></button>
+      <button type="button" class="acc-item" aria-label="Chocolate bouquet in pink wrap" style="--lqip:url(data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JbACdMoMYPYD1/wGhpfNGbkdvqNWMT8gA/lvJ5zoMd4DKVjjRYqNuoNb5oV4uPikELjg4Mvzdzo3bFerG0dymO9BS7Dr1nwe2ROo3yU69cRfbomsC7AAA)"><img data-src="src/opt/g-2-s600.webp" data-srcset="src/opt/g-2-s420.webp 420w, src/opt/g-2-s600.webp 600w, src/opt/g-2-s800.webp 720w" sizes="(max-width: 900px) 76vw, 540px" width="800" height="1000" alt="Chocolate bouquet in pink wrap" decoding="async"></button>
+      <button type="button" class="acc-item" aria-label="Snack basket with red tulle" style="--lqip:url(data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JbACdMoRwAA8vfvbAKY2hLsAA/lKLsgm829wOtzC4Nh3HDMJ6wng+8N5J+uKskUtJo7EUpMS8ALkiYSFaJSYOCTyuEmYAAAA=)"><img data-src="src/opt/g-3-s600.webp" data-srcset="src/opt/g-3-s420.webp 420w, src/opt/g-3-s600.webp 600w, src/opt/g-3-s800.webp 800w" sizes="(max-width: 900px) 76vw, 540px" width="800" height="1000" alt="Snack basket with red tulle" decoding="async"></button>
+      <button type="button" class="acc-item" aria-label="Custom gift by Dreamy Gift Studio" style="--lqip:url(data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAwBACdASoQABQAPu1kqU2ppaOiMAgBMB2JYgC7LwAB0bG4glpMUHNLrpgA/q8Yv/Uo/2QE7rITLUMzCHlbdy9Nihiy3VZRGSdT2P8IgAA=)"><img data-src="src/opt/g-4-s600.webp" data-srcset="src/opt/g-4-s420.webp 420w, src/opt/g-4-s600.webp 600w, src/opt/g-4-s800.webp 800w" sizes="(max-width: 900px) 76vw, 540px" width="800" height="1000" alt="Custom gift by Dreamy Gift Studio" decoding="async"></button>
+      <button type="button" class="acc-item" aria-label="Custom gift by Dreamy Gift Studio" style="--lqip:url(data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAQBACdASoQABQAPu1iqU2ppaQiMAgBMB2JbAAAUXoUvM63z+f9YVuLEAD918+LCajf1eqwox/lf51i/uGTUVfV2F1ZTUH00J9X0SjTe1RvcOYAAAA=)"><img data-src="src/opt/g-5-s600.webp" data-srcset="src/opt/g-5-s420.webp 420w, src/opt/g-5-s600.webp 600w, src/opt/g-5-s800.webp 800w" sizes="(max-width: 900px) 76vw, 540px" width="800" height="1000" alt="Custom gift by Dreamy Gift Studio" decoding="async"></button>
+      <button type="button" class="acc-item" aria-label="Custom gift by Dreamy Gift Studio" style="--lqip:url(data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACwAwCdASoQABQAPu1kqU4ppaOiMAgBMB2JYwCdABK4eBoFdO8NAADtYGPWrAfQE4eEtw2I9gBSPNHWQ2wki2GK4dnD1Pg0FBeQh0M9AAA=)"><img data-src="src/opt/g-6-s600.webp" data-srcset="src/opt/g-6-s420.webp 420w, src/opt/g-6-s600.webp 600w, src/opt/g-6-s800.webp 800w" sizes="(max-width: 900px) 76vw, 540px" width="800" height="1000" alt="Custom gift by Dreamy Gift Studio" decoding="async"></button>
     </div>
     <div class="gallery-foot reveal">
       <p>New creations land on Instagram every week.</p>
@@ -1514,6 +1517,21 @@
     entries.forEach(e => { if (e.isIntersecting) setStep(steps.indexOf(e.target)); });
   }, { rootMargin: '-45% 0px -45% 0px' });
   steps.forEach(s => stepObserver.observe(s));
+
+  // Gallery: begin loading ~1.5 screens before the section arrives
+  const galleryImgs = document.querySelectorAll('#accordion img[data-src]');
+  const markLoaded = (img) => img.classList.add('is-loaded');
+  const loadGallery = () => galleryImgs.forEach(img => {
+    if (img.src) return;
+    img.addEventListener('load', () => markLoaded(img), { once: true });
+    img.srcset = img.dataset.srcset;
+    img.src = img.dataset.src;
+    if (img.complete && img.naturalWidth) markLoaded(img);
+  });
+  const galleryObserver = new IntersectionObserver((entries) => {
+    if (entries.some(e => e.isIntersecting)) { loadGallery(); galleryObserver.disconnect(); }
+  }, { rootMargin: '1200px 0px' });
+  galleryObserver.observe(document.getElementById('gallery'));
 
   // Gallery accordion
   const accItems = document.querySelectorAll('#accordion .acc-item');
