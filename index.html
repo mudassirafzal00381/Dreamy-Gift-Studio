@@ -1033,19 +1033,25 @@
             <input type="tel" id="contact-phone" placeholder="+92 300 0000000" autocomplete="tel">
           </div>
         </div>
-        <div class="form-group">
-          <label for="contact-occasion">Gift occasion</label>
-          <select id="contact-occasion">
-            <option value="">Select occasion</option>
-            <option>Birthday</option>
-            <option>Wedding / Nikah</option>
-            <option>Anniversary</option>
-            <option>Eid Gift</option>
-            <option>Valentine's Day</option>
-            <option>Mother's Day</option>
-            <option>Just Because</option>
-            <option>Other</option>
-          </select>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="contact-occasion">Gift occasion</label>
+            <select id="contact-occasion">
+              <option value="">Select occasion</option>
+              <option>Birthday</option>
+              <option>Wedding / Nikah</option>
+              <option>Anniversary</option>
+              <option>Eid Gift</option>
+              <option>Valentine's Day</option>
+              <option>Mother's Day</option>
+              <option>Just Because</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contact-date">Delivery date</label>
+            <input type="date" id="contact-date">
+          </div>
         </div>
         <div class="form-group">
           <label for="contact-message">Tell us your idea</label>
@@ -1348,6 +1354,13 @@
 
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  // Delivery date can't be in the past
+  (() => {
+    const d = new Date();
+    const today = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    document.getElementById('contact-date').min = today;
+  })();
+
   // Reveal on scroll
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(e => {
@@ -1485,8 +1498,12 @@
     const name = document.getElementById('contact-name').value || 'Customer';
     const phone = document.getElementById('contact-phone').value || '';
     const occasion = document.getElementById('contact-occasion').value || 'Not specified';
+    const dateVal = document.getElementById('contact-date').value;
+    const deliveryDate = dateVal
+      ? new Date(dateVal + 'T00:00:00').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' })
+      : 'Not specified';
     const msg = document.getElementById('contact-message').value || '';
-    const text = `Hi Dreamy Gift Studio! 🎁\n\nName: ${name}\nPhone: ${phone}\nOccasion: ${occasion}\n\nMessage: ${msg}`;
+    const text = `Hi Dreamy Gift Studio! 🎁\n\nName: ${name}\nPhone: ${phone}\nOccasion: ${occasion}\nDelivery Date: ${deliveryDate}\n\nMessage: ${msg}`;
     window.open('https://wa.me/923336861680?text=' + encodeURIComponent(text), '_blank');
   }
 
