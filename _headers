@@ -1,0 +1,8 @@
+# Netlify caching rules
+# Optimized images never change under the same name, so browsers can keep them for a year.
+# If you replace an image, save it under a new file name.
+/src/opt/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/src/*
+  Cache-Control: public, max-age=604800

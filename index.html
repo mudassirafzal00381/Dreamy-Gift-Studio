@@ -9,10 +9,16 @@
   <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
-  <link rel="preload" as="image" href="src/2nd%20Dection%20Image.png">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <!-- Icon fonts load without blocking the first paint -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css">
+  </noscript>
+  <link rel="preload" as="image" href="src/opt/hero-basket-600.webp" imagesrcset="src/opt/hero-basket-600.webp 600w, src/opt/hero-basket-1000.webp 1000w" imagesizes="(max-width: 900px) 360px, 460px" fetchpriority="high">
   <style>
     /* ================================================================
        TOKENS
@@ -220,6 +226,8 @@
     .aurora span:nth-child(2) { width: 50vw; height: 50vw; right: -14vw; top: 10vh; background: radial-gradient(circle, var(--lilac) 0%, transparent 62%); opacity: 0.35; animation: drift 22s ease-in-out infinite alternate-reverse; }
     .aurora span:nth-child(3) { width: 40vw; height: 40vw; left: 30vw; bottom: -24vw; background: radial-gradient(circle, var(--accent) 0%, transparent 60%); opacity: 0.18; animation: drift 26s ease-in-out infinite alternate; }
     @keyframes drift { to { transform: translate(6vw, 4vw) scale(1.12); } }
+    /* Decorative loops pause while their section is off screen */
+    .is-offscreen, .is-offscreen * { animation-play-state: paused !important; }
 
     .hero-inner { position: relative; display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
     .pill {
@@ -472,7 +480,7 @@
     .contact-shell {
       position: relative; border-radius: calc(var(--r-card) + 8px); overflow: hidden;
       padding: clamp(28px, 5vw, 64px); display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 64px);
-      background: url('src/Cu.png') center / cover no-repeat, var(--bg-2);
+      background: url('src/opt/bg-flowers-1600.webp') center / cover no-repeat, var(--bg-2);
       isolation: isolate;
     }
     .contact-shell::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(100deg, color-mix(in srgb, var(--bg) 88%, transparent) 30%, color-mix(in srgb, var(--bg) 35%, transparent)); }
@@ -649,7 +657,8 @@
       .process-sticky { position: relative; top: 0; }
       .ring { display: none; }
       .step { min-height: 0; padding-bottom: 36px; }
-      .contact-shell { grid-template-columns: 1fr; }
+      .contact-shell { grid-template-columns: 1fr; background-image: url('src/opt/bg-flowers-900.webp'); }
+      .aurora span { animation: none; }
       .contact-shell::before { background: color-mix(in srgb, var(--bg) 82%, transparent); }
       .footer-top { grid-template-columns: 1fr 1fr; }
       .footer-brand { grid-column: 1 / -1; }
@@ -685,8 +694,6 @@
       .progress { display: none; }
     }
   </style>
-  <!-- Supabase Client CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
 
@@ -697,7 +704,7 @@
 <div class="nav-wrap" id="nav-wrap">
   <div class="container">
     <nav class="nav" aria-label="Main">
-      <a href="#hero" class="nav-logo"><img src="src/Logo.jpg" alt="Dreamy Gift Studio logo"><span>Dreamy Gift Studio</span></a>
+      <a href="#hero" class="nav-logo"><img src="src/opt/logo-96.webp" width="44" height="44" alt="Dreamy Gift Studio logo"><span>Dreamy Gift Studio</span></a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#products">Gifts</a></li>
@@ -744,13 +751,13 @@
 
     <div class="hero-visual" id="hero-visual">
       <div class="layer arch-layer" data-depth="10">
-        <div class="arch"><img src="src/2nd%20Dection%20Image.png" alt="Chocolate gift basket wrapped in tulle with a blue satin bow" fetchpriority="high"></div>
+        <div class="arch"><img src="src/opt/hero-basket-600.webp" srcset="src/opt/hero-basket-600.webp 600w, src/opt/hero-basket-1000.webp 1000w" sizes="(max-width: 900px) 360px, 460px" width="1178" height="1335" alt="Chocolate gift basket wrapped in tulle with a blue satin bow" fetchpriority="high"></div>
       </div>
       <div class="layer orb-a-layer" data-depth="26">
-        <div class="pop" style="--delay:1s"><div class="orb floaty"><img src="src/product-roses-bouquet.png" alt="Red rose bouquet"></div></div>
+        <div class="pop" style="--delay:1s"><div class="orb floaty"><img src="src/opt/p-roses-400.webp" srcset="src/opt/p-roses-400.webp 400w, src/opt/p-roses-700.webp 700w" sizes="190px" width="400" height="400" alt="Red rose bouquet" decoding="async"></div></div>
       </div>
       <div class="layer orb-b-layer" data-depth="20">
-        <div class="pop" style="--delay:1.15s"><div class="orb floaty slow"><img src="src/product-balloon-gift.png" alt="Balloon gift box"></div></div>
+        <div class="pop" style="--delay:1.15s"><div class="orb floaty slow"><img src="src/opt/p-balloon-400.webp" srcset="src/opt/p-balloon-400.webp 400w, src/opt/p-balloon-700.webp 700w" sizes="160px" width="400" height="400" alt="Balloon gift box" decoding="async"></div></div>
       </div>
       <div class="layer badge-layer" data-depth="16">
         <div class="pop" style="--delay:1.3s">
@@ -801,7 +808,7 @@
 <section id="about">
   <div class="container bento">
     <div class="cell cell-img reveal-scale">
-      <img src="src/Flower%20Bouquet.png" alt="Red rose bouquet in black wrap with a satin ribbon" loading="lazy">
+      <img src="src/opt/bouquet-red-500.webp" srcset="src/opt/bouquet-red-500.webp 500w, src/opt/bouquet-red-900.webp 900w" sizes="(max-width: 900px) 92vw, 420px" width="1448" height="1086" alt="Red rose bouquet in black wrap with a satin ribbon" loading="lazy" decoding="async">
     </div>
     <div class="cell cell-intro reveal" style="--d:1">
       <h2>Every gift <span class="accent-text">tells a story.</span></h2>
@@ -842,7 +849,7 @@
 
     <div class="p-grid">
       <article class="p-card p-lg reveal-scale tilt">
-        <img src="src/product-beauty-hamper.png" alt="Beauty gift hamper" loading="lazy">
+        <img src="src/opt/p-beauty-600.webp" srcset="src/opt/p-beauty-600.webp 600w, src/opt/p-beauty-1100.webp 1100w" sizes="(max-width: 1080px) 92vw, 610px" width="1100" height="1100" alt="Beauty gift hamper" loading="lazy" decoding="async">
         <div class="p-body">
           <div>
             <h3>Beauty Gift Hamper</h3>
@@ -852,7 +859,7 @@
         </div>
       </article>
       <article class="p-card reveal-scale tilt" style="--d:1">
-        <img src="src/product-roses-bouquet.png" alt="Red roses graduation bouquet" loading="lazy">
+        <img src="src/opt/p-roses-400.webp" srcset="src/opt/p-roses-400.webp 400w, src/opt/p-roses-700.webp 700w" sizes="(max-width: 600px) 92vw, (max-width: 1080px) 46vw, 300px" width="700" height="700" alt="Red roses graduation bouquet" loading="lazy" decoding="async">
         <div class="p-body">
           <div>
             <h3>Flower Bouquets</h3>
@@ -862,7 +869,7 @@
         </div>
       </article>
       <article class="p-card reveal-scale tilt" style="--d:2">
-        <img src="src/product-money-bouquet.png" alt="Money bouquet with notes folded into roses" loading="lazy">
+        <img src="src/opt/p-money-400.webp" srcset="src/opt/p-money-400.webp 400w, src/opt/p-money-700.webp 700w" sizes="(max-width: 600px) 92vw, (max-width: 1080px) 46vw, 300px" width="700" height="700" alt="Money bouquet with notes folded into roses" loading="lazy" decoding="async">
         <div class="p-body">
           <div>
             <h3>Money Bouquets</h3>
@@ -872,7 +879,7 @@
         </div>
       </article>
       <article class="p-card reveal-scale tilt" style="--d:3">
-        <img src="src/product-balloon-gift.png" alt="Hot air balloon style gift box" loading="lazy">
+        <img src="src/opt/p-balloon-400.webp" srcset="src/opt/p-balloon-400.webp 400w, src/opt/p-balloon-700.webp 700w" sizes="(max-width: 600px) 92vw, (max-width: 1080px) 46vw, 300px" width="700" height="700" alt="Hot air balloon style gift box" loading="lazy" decoding="async">
         <div class="p-body">
           <div>
             <h3>Balloon Gift Boxes</h3>
@@ -882,7 +889,7 @@
         </div>
       </article>
       <article class="p-card reveal-scale tilt" style="--d:4">
-        <img src="src/product-snack-basket.png" alt="Snack gift basket tied with tulle" loading="lazy">
+        <img src="src/opt/p-snack-400.webp" srcset="src/opt/p-snack-400.webp 400w, src/opt/p-snack-700.webp 700w" sizes="(max-width: 600px) 92vw, (max-width: 1080px) 46vw, 300px" width="700" height="700" alt="Snack gift basket tied with tulle" loading="lazy" decoding="async">
         <div class="p-body">
           <div>
             <h3>Gift Baskets</h3>
@@ -892,7 +899,7 @@
         </div>
       </article>
       <article class="p-card p-wide reveal">
-        <div class="p-media"><img src="src/product-chocolate-white.png" alt="White and gold chocolate bouquet with pink bows" loading="lazy"></div>
+        <div class="p-media"><img src="src/opt/p-choco-white-600.webp" srcset="src/opt/p-choco-white-600.webp 600w, src/opt/p-choco-white-1000.webp 1000w" sizes="(max-width: 600px) 92vw, 650px" width="1000" height="1000" alt="White and gold chocolate bouquet with pink bows" loading="lazy" decoding="async"></div>
         <div class="p-body">
           <h3>Premium Chocolate Bouquet</h3>
           <p><span>White and gold wraps filled with Dairy Milk, Mars and KitKat, finished with soft pink bows. Our most requested surprise.</span></p>
@@ -959,12 +966,12 @@
       </div>
     </div>
     <div class="accordion reveal" id="accordion">
-      <button type="button" class="acc-item is-open" aria-label="Snack bouquet with balloon box and baskets"><img src="src/WhatsApp%20Image%202026-06-21%20at%209.02.06%20PM.jpeg" alt="Snack bouquet with balloon box and baskets" loading="lazy"></button>
-      <button type="button" class="acc-item" aria-label="Chocolate bouquet in pink wrap"><img src="src/WhatsApp%20Image%202026-06-21%20at%206.21.53%20PM.jpeg" alt="Chocolate bouquet in pink wrap" loading="lazy"></button>
-      <button type="button" class="acc-item" aria-label="Snack basket with red tulle"><img src="src/WhatsApp%20Image%202026-06-21%20at%209.04.20%20PM.jpeg" alt="Snack basket with red tulle" loading="lazy"></button>
-      <button type="button" class="acc-item" aria-label="Custom gift by Dreamy Gift Studio"><img src="src/WhatsApp%20Image%202026-06-21%20at%209.01.38%20PM.jpeg" alt="Custom gift by Dreamy Gift Studio" loading="lazy"></button>
-      <button type="button" class="acc-item" aria-label="Custom gift by Dreamy Gift Studio"><img src="src/WhatsApp%20Image%202026-06-21%20at%209.02.20%20PM.jpeg" alt="Custom gift by Dreamy Gift Studio" loading="lazy"></button>
-      <button type="button" class="acc-item" aria-label="Custom gift by Dreamy Gift Studio"><img src="src/WhatsApp%20Image%202026-06-21%20at%209.04.48%20PM.jpeg" alt="Custom gift by Dreamy Gift Studio" loading="lazy"></button>
+      <button type="button" class="acc-item is-open" aria-label="Snack bouquet with balloon box and baskets"><img src="src/opt/g-1-500.webp" srcset="src/opt/g-1-500.webp 500w, src/opt/g-1-900.webp 900w" sizes="(max-width: 900px) 76vw, 580px" width="1600" height="1200" decoding="async" alt="Snack bouquet with balloon box and baskets" loading="lazy"></button>
+      <button type="button" class="acc-item" aria-label="Chocolate bouquet in pink wrap"><img src="src/opt/g-2-500.webp" srcset="src/opt/g-2-500.webp 500w, src/opt/g-2-900.webp 720w" sizes="(max-width: 900px) 76vw, 580px" width="720" height="1280" decoding="async" alt="Chocolate bouquet in pink wrap" loading="lazy"></button>
+      <button type="button" class="acc-item" aria-label="Snack basket with red tulle"><img src="src/opt/g-3-500.webp" srcset="src/opt/g-3-500.webp 500w, src/opt/g-3-900.webp 900w" sizes="(max-width: 900px) 76vw, 580px" width="1200" height="1600" decoding="async" alt="Snack basket with red tulle" loading="lazy"></button>
+      <button type="button" class="acc-item" aria-label="Custom gift by Dreamy Gift Studio"><img src="src/opt/g-4-500.webp" srcset="src/opt/g-4-500.webp 500w, src/opt/g-4-900.webp 900w" sizes="(max-width: 900px) 76vw, 580px" width="1200" height="1600" decoding="async" alt="Custom gift by Dreamy Gift Studio" loading="lazy"></button>
+      <button type="button" class="acc-item" aria-label="Custom gift by Dreamy Gift Studio"><img src="src/opt/g-5-500.webp" srcset="src/opt/g-5-500.webp 500w, src/opt/g-5-900.webp 900w" sizes="(max-width: 900px) 76vw, 580px" width="1200" height="1600" decoding="async" alt="Custom gift by Dreamy Gift Studio" loading="lazy"></button>
+      <button type="button" class="acc-item" aria-label="Custom gift by Dreamy Gift Studio"><img src="src/opt/g-6-500.webp" srcset="src/opt/g-6-500.webp 500w, src/opt/g-6-900.webp 900w" sizes="(max-width: 900px) 76vw, 580px" width="1200" height="1600" decoding="async" alt="Custom gift by Dreamy Gift Studio" loading="lazy"></button>
     </div>
     <div class="gallery-foot reveal">
       <p>New creations land on Instagram every week.</p>
@@ -1069,7 +1076,7 @@
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <a href="#hero" class="nav-logo"><img src="src/Logo.jpg" alt=""><span>Dreamy Gift Studio</span></a>
+        <a href="#hero" class="nav-logo"><img src="src/opt/logo-96.webp" width="44" height="44" alt="" loading="lazy" decoding="async"><span>Dreamy Gift Studio</span></a>
         <p>Dreamy gifts for special moments. Customized orders from the heart of Muzaffargarh, Pakistan.</p>
         <div class="social-links">
           <a href="https://www.instagram.com/dreamygift_studio/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
@@ -1244,8 +1251,8 @@
       <p class="modal-subtitle">Verify admin credentials to access approvals.</p>
       <form id="admin-login-form" onsubmit="handleAdminLogin(event)">
         <div class="form-group">
-          <label for="admin-email">Email address</label>
-          <input type="email" id="admin-email" required placeholder="admin@dreamygifts.com" autocomplete="username">
+          <label for="admin-username">Username</label>
+          <input type="text" id="admin-username" required placeholder="Your username" autocomplete="username" autocapitalize="off" spellcheck="false">
         </div>
         <div class="form-group">
           <label for="admin-password">Password</label>
@@ -1317,14 +1324,33 @@
   let supabaseClient = null;
   let useFallback = true;
 
-  if (typeof supabase !== 'undefined' && SUPABASE_URL && !SUPABASE_URL.includes("your-supabase")) {
+  // The Supabase library is only downloaded once real credentials are set,
+  // so visitors don't pay for it while the site runs on local storage.
+  const dbReady = (async () => {
+    if (!SUPABASE_URL || SUPABASE_URL.includes("your-supabase")) return;
     try {
+      await new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
       supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
       useFallback = false;
       console.log("Supabase connected successfully.");
     } catch (e) {
       console.error("Failed to connect to Supabase. Falling back to local storage.", e);
     }
+  })();
+
+  // Admin login for local-storage mode. Only a SHA-256 hash of the password is kept here.
+  const ADMIN_USERNAME = 'ayesha';
+  const ADMIN_PASSWORD_SHA256 = '0a460bd2dc842f31d1fa0e8d11a75f3021642ed48dadfa892724c35eca8e05e1';
+
+  async function sha256Hex(text) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+    return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
   }
 
   const defaultReviews = [
@@ -1368,6 +1394,12 @@
     });
   }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal, .reveal-scale').forEach(el => revealObserver.observe(el));
+
+  // Pause hero and ticker loops while they are off screen (saves CPU/battery, smoother scrolling)
+  const loopObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => e.target.classList.toggle('is-offscreen', !e.isIntersecting));
+  });
+  document.querySelectorAll('#hero, .ticker').forEach(el => loopObserver.observe(el));
 
   // Nav elevation once the page leaves the top
   const navWrap = document.getElementById('nav-wrap');
@@ -1602,6 +1634,7 @@
   }
 
   async function handleCheckoutSubmit(e) {
+    await dbReady;
     e.preventDefault();
     const productName = document.getElementById('checkout-product-val').value;
     const name = document.getElementById('order-name').value;
@@ -1656,6 +1689,7 @@
   // =========================================================================
 
   async function handleTrackSubmit(e) {
+    await dbReady;
     e.preventDefault();
     const trackIdInput = document.getElementById('track-id').value.trim().toUpperCase();
     const resultBlock = document.getElementById('track-result');
@@ -1699,6 +1733,7 @@
   // =========================================================================
 
   async function handleReviewSubmit(e) {
+    await dbReady;
     e.preventDefault();
 
     const submitBtn = document.getElementById('review-submit-btn');
@@ -1779,6 +1814,7 @@
   }
 
   async function loadApprovedTestimonials() {
+    await dbReady;
     const sliderContainer = document.querySelector('.testimonials-slider');
     if (!sliderContainer) return;
 
@@ -1885,8 +1921,9 @@
   }
 
   async function handleAdminLogin(e) {
+    await dbReady;
     e.preventDefault();
-    const email = document.getElementById('admin-email').value.trim();
+    const username = document.getElementById('admin-username').value.trim();
     const password = document.getElementById('admin-password').value;
     const errorBlock = document.getElementById('admin-login-error');
 
@@ -1894,12 +1931,13 @@
     let loggedIn = false;
 
     if (useFallback) {
-      if (email === 'admin@dreamygifts.com' && password === 'admin') {
-        adminSession = { email: email };
+      if (username.toLowerCase() === ADMIN_USERNAME && await sha256Hex(password) === ADMIN_PASSWORD_SHA256) {
+        adminSession = { email: username };
         loggedIn = true;
       }
     } else {
-      const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+      // Supabase accounts sign in with the email address typed into the username field
+      const { data, error } = await supabaseClient.auth.signInWithPassword({ email: username, password });
       if (!error) {
         adminSession = data.session.user;
         loggedIn = true;
@@ -1909,7 +1947,7 @@
     if (loggedIn) {
       document.getElementById('admin-login-screen').style.display = 'none';
       document.getElementById('admin-dashboard-screen').style.display = 'flex';
-      document.getElementById('admin-logged-in-user').innerText = `Logged in as: ${adminSession.email}`;
+      document.getElementById('admin-logged-in-user').innerText = `Logged in as ${adminSession.email}`;
       await loadAdminData();
     } else {
       errorBlock.style.display = 'block';
@@ -1917,6 +1955,7 @@
   }
 
   async function loadAdminData() {
+    await dbReady;
     if (useFallback) {
       allReviews = JSON.parse(localStorage.getItem('dg_reviews') || '[]');
       allOrders = JSON.parse(localStorage.getItem('dg_orders') || '[]');
@@ -2045,6 +2084,7 @@
   }
 
   async function updateReviewStatus(id, newStatus) {
+    await dbReady;
     let success = false;
     if (useFallback) {
       const localReviews = JSON.parse(localStorage.getItem('dg_reviews') || '[]');
@@ -2066,6 +2106,7 @@
   }
 
   async function deleteReview(id) {
+    await dbReady;
     if (!confirm("Are you sure you want to permanently delete this review?")) return;
 
     let success = false;
@@ -2089,6 +2130,7 @@
   }
 
   async function updateOrderStatus(id, newStatus) {
+    await dbReady;
     let success = false;
     if (useFallback) {
       const localOrders = JSON.parse(localStorage.getItem('dg_orders') || '[]');
@@ -2109,6 +2151,7 @@
   }
 
   async function handleAdminLogout() {
+    await dbReady;
     if (!useFallback) {
       await supabaseClient.auth.signOut();
     }
