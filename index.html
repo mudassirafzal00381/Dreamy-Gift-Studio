@@ -6,6 +6,7 @@
   <title>Dreamy Gift Studio | Customized Gifts in Pakistan</title>
   <meta name="description" content="Dreamy gifts for special moments. Customized orders available from Muzaffargarh, Pakistan.">
   <meta name="theme-color" content="#f4f8ff">
+  <meta name="color-scheme" content="only light">
   <script>document.documentElement.classList.add('js');</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,26 +55,8 @@
       --z-float: 200; --z-menu: 300; --z-nav: 400; --z-modal: 500; --z-progress: 600;
     }
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg:        #0a1026;
-        --bg-2:      #0f1834;
-        --surface:   #131d40;
-        --glass:     rgba(19,29,64,0.62);
-        --glass-brd: rgba(255,255,255,0.10);
-        --ink:       #eef2ff;
-        --ink-2:     #aab5de;
-        --line:      rgba(255,255,255,0.10);
-        --accent:    #7b96ff;
-        --accent-2:  #9aafff;
-        --on-accent: #0a1026;
-        --accent-soft: rgba(123,150,255,0.14);
-        --lilac:     #7e5bc2;
-        --sky:       #2b5bb8;
-        --shadow:    0 30px 60px -24px rgba(0,0,0,0.6);
-        --shadow-sm: 0 12px 30px -14px rgba(0,0,0,0.55);
-      }
-    }
+    /* Light theme only, even when the device is in dark mode */
+    :root { color-scheme: only light; }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
@@ -594,7 +577,6 @@
     .tracking-code { display: inline-block; margin: 14px 0 22px; padding: 12px 24px; border-radius: var(--r-sm); border: 1.5px dashed var(--accent); background: var(--accent-soft); color: var(--accent); font-size: 1.35rem; font-weight: 600; letter-spacing: 0.04em; }
     .stack { display: grid; gap: 10px; margin-top: 22px; }
     .inline-error { display: none; margin-top: 16px; padding: 12px 14px; border-radius: var(--r-sm); background: rgba(220,53,69,0.1); color: #c42a3a; font-size: 0.92rem; font-weight: 500; text-align: center; }
-    @media (prefers-color-scheme: dark) { .inline-error { color: #ff8a96; } }
     .track-rows { display: grid; gap: 0; }
     .track-rows p { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); color: var(--ink-2); }
     .track-rows p:last-child { border-bottom: 0; }
